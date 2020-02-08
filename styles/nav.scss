@@ -21,16 +21,32 @@ nav {
 
 #login {
   color: black;
-  opacity: 0.7;
+  opacity: 0.5;
   background-color: transparent;
   border-color: transparent;
   font-size: 1.25em;
   font-family: 'Source Sans Pro', sans-serif;
   position: absolute;
-  bottom: 45%;
+  bottom: 5%;
   left: 90%;
 }
 
-#nav-down:hover {
+#register {
+  color: black;
+  opacity: 0.5;
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 1.25em;
+  font-family: 'Source Sans Pro', sans-serif;
+  position: absolute;
+  bottom: 5%;
+  left: 85%;
+}
+  
+#login:hover {
+  opacity: 1.0;
+}
+
+#register:hover {
   opacity: 1.0;
 }
