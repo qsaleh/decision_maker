@@ -5,30 +5,31 @@ nav {
   z-index: 1;
   position: fixed;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
   background-color: white;
-
+}
+form {
+  width: 40%;
+  position: absolute;
+  bottom: 5%;
+  right: 0.1em;
 }
 
 #nav-align {
-  font-size: 3em;
-  font-family: rez, sans-serif;
-  position: absolute;
-  bottom: 5%;
-  left: 1.1em;
+font-size: 3em;
+font-family: rez, sans-serif;
+position: absolute;
+bottom: 5%;
+left: 1.1em;
 }
+
 
 #login {
   color: black;
   opacity: 0.5;
   background-color: transparent;
   border-color: transparent;
-  font-size: 1.25em;
+  font-size: 1em;
   font-family: 'Source Sans Pro', sans-serif;
-  position: absolute;
-  bottom: 5%;
-  left: 90%;
 }
 
 #register {
@@ -36,13 +37,13 @@ nav {
   opacity: 0.5;
   background-color: transparent;
   border-color: transparent;
-  font-size: 1.25em;
+  font-size: 1em;
   font-family: 'Source Sans Pro', sans-serif;
   position: absolute;
   bottom: 5%;
-  left: 85%;
+  right: 6em;
 }
-  
+
 #login:hover {
   opacity: 1.0;
 }

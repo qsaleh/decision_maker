@@ -17,8 +17,13 @@
   <body>
     <nav>
       <img src="https://cdn2.iconfinder.com/data/icons/law-and-crime-2/512/drawing16-512.png " height="55" width="55" style="padding-left: 0.35em; padding-bottom: 0.5em;"><span id="nav-align">verdict</span>
-      <button id="register">register</button>
-      <button id="login">log in</button>
+
+      <form action="/action">
+        <input type="text" placeholder="Username" name="username">
+        <input type="text" placeholder="Password" name="psw">
+        <button id="login" type="submit">Login</button>
+      </form>
+      <button id="register">New user?</button>
 
   </nav>
     <header>
@@ -26,5 +31,33 @@
     </header>
 
   </body>
+
+  <!--Contact Form -->
+<div id="contactdiv">
+  <form class="form" action="#" id="contact">
+  <img src="images/button_cancel.png" class="img" id="cancel"/>
+  <h3>Contact Form</h3>
+  <hr/><br/>
+  <label>Name: <span>*</span></label>
+  <br/>
+  <input type="text" id="name" placeholder="Name"/><br/>
+  <br/>
+  <label>Email: <span>*</span></label>
+  <br/>
+  <input type="text" id="email" placeholder="Email"/><br/>
+  <br/>
+  <label>Contact No: <span>*</span></label>
+  <br/>
+  <input type="text" id="contactno" placeholder="10 digit Mobile no."/><br/>
+  <br/>
+  <label>Message:</label>
+  <br/>
+  <textarea id="message" placeholder="Message......."></textarea><br/>
+  <br/>
+  <input type="button" id="send" value="Send"/>
+  <input type="button" id="cancel" value="Cancel"/>
+  <br/>
+  </form>
+  </div>
 </html>
 
