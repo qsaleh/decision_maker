@@ -13,10 +13,21 @@ header {
 .headerElements {
   display: inline-block;
   margin: auto;
+  font-size:18px;
 }
 
 .headerFont {
   font-weight: lighter;
+
+}
+
+header span {
+  margin-left:8rem;
+  margin-right: 0.8rem;
+}
+
+header .fa {
+  font-size: 30px;
 
 }
 
