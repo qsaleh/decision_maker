@@ -12,6 +12,7 @@
  <!-- Javascript external files -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/nav.js"></script>
   </head>
 
   <body>
@@ -23,7 +24,21 @@
         <input type="text" placeholder="Password" name="psw">
         <button id="login" type="submit">Login</button>
       </form>
-      <button id="register">New user?</button>
+      <button id="register" onclick="openForm()">New user?</button>
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Register</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
 
   </nav>
     <header>
@@ -31,33 +46,4 @@
     </header>
 
   </body>
-
-  <!--Contact Form -->
-<div id="contactdiv">
-  <form class="form" action="#" id="contact">
-  <img src="images/button_cancel.png" class="img" id="cancel"/>
-  <h3>Contact Form</h3>
-  <hr/><br/>
-  <label>Name: <span>*</span></label>
-  <br/>
-  <input type="text" id="name" placeholder="Name"/><br/>
-  <br/>
-  <label>Email: <span>*</span></label>
-  <br/>
-  <input type="text" id="email" placeholder="Email"/><br/>
-  <br/>
-  <label>Contact No: <span>*</span></label>
-  <br/>
-  <input type="text" id="contactno" placeholder="10 digit Mobile no."/><br/>
-  <br/>
-  <label>Message:</label>
-  <br/>
-  <textarea id="message" placeholder="Message......."></textarea><br/>
-  <br/>
-  <input type="button" id="send" value="Send"/>
-  <input type="button" id="cancel" value="Cancel"/>
-  <br/>
-  </form>
-  </div>
-</html>
 
