@@ -42,7 +42,7 @@ visibility: hidden;
 
 
 .bounce {
-  animation: bounce 1s infinite;
+  animation: bounce 0.7s infinite;
 }
 
 @keyframes bounce {
@@ -57,23 +57,16 @@ visibility: hidden;
  }
 }
 
-.bounce:hover {
-
+#bar-1 {
+  animation-delay: 2s;
 }
-
-
-
-
-
-
 
 
 //Media queries for the header
 @media only screen and (min-width: 1020px) {
   .headerElements {
-
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-betweeen;
     font-size: 20px;
   }
 
@@ -83,6 +76,8 @@ visibility: hidden;
     margin: 0 auto;
     padding-left: 15em;
 
+
+
   }
 
   .headerElementsRight {
@@ -91,60 +86,68 @@ visibility: hidden;
 
   }
 
+svg.chart {
+  transform: scale(1.5);
+  margin-top: 3em;
+}
 
-  svg .cls-1{
-    stroke-dasharray: 250;
-    stroke: black;
-    font-weight: bold;
-    stroke-dashoffset: 250;
-    animation: offset 2s linear forwards;
-  }
+.bar {
+  fill: black; /* changes the background */
+  height: 21px;
+  transition: fill .3s ease;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.bar text {
+  color: black;
 
-  @keyframes offset {
-    to { stroke-dashoffset:0;
-    }
-  }
-
-
-
-
+}
 
 
-  @keyframes fadein {from { opacity: 0; }to  { opacity: 1; }}
+
+// ANIMATION
+@keyframes fadein {
+  from
+  { opacity: 0; }
+  to  { opacity: 1; }
+}
+
+
+
+#bar-1 {
+  animation: fadein 2s forwards; opacity:0;
+}
+
+
+#bar-2 {
+  animation: fadein 4s forwards; opacity:0;
+
+}
+#bar-3 {
+  animation: fadein 6s forwards; opacity:0;
+}
+#bar-4 {
+  animation: fadein 8s forwards; opacity:0;
+}
+#bar-5 {
+  animation: fadein 10s forwards; opacity:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
-// .little_bar, .medium_bar, .big_bar,.in_between_bar, .in_between_smalls { animation: fadein 2s forwards; opacity:1;}
-
-              .little_bar{
-
-                  animation: fadein 2s forwards; opacity:1;
-
-                }
-
-              .medium_bar {
-                animation: fadein 4s forwards; opacity:1;
-              }
-
-              .big_bar {
-                animation: fadein 6s forwards; opacity:1;
-              }
-
-              .in_between_bar {
-                animation: fadein 8s forwards; opacity:1;
-                }
-
-              .in_between_smalls {
-                animation: fadein 10s forwards; opacity:1;
-              }
-
-
-
-
-
-
-
-
-
-
-
