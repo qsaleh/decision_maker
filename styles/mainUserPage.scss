@@ -1,0 +1,31 @@
+.previousPoll {
+  display: flex;
+  justify-content: center;
+  color: #E48F75;
+}
+
+// CHART 1
+
+.chart1 {
+  display: flex;
+  justify-content: center;
+}
+
+.bar1 {
+  fill: #F6CFC2;
+  height: 21px;
+  transition: fill .3s ease;
+  cursor: pointer;
+  font-family: Helvetica, sans-serif;
+}
+.bar1 text {
+  color: black;
+}
+.bar1:hover,
+.bar1:focus {
+  fill: #C5A69B;
+}
+.bar1:hover text,
+.bar1:focus text {
+  fill: #C5A69B;
+}
