@@ -10,7 +10,7 @@ $('.userSubmissionForm').hide();
 
   //Here we are going to make the header disappear
   $('#toggleSubmissionForm').click(function() {
-      $('header').slideUp().animate({height: "20px"}, 500);
+      $('header').slideUp();
       //Expanding input box on click
       $('.userSubmissionForm').show();
       $('.textForm').show();
@@ -19,22 +19,22 @@ $('.userSubmissionForm').hide();
 
   $('#title').click(function() {
     $(this).css('width','500px');
-    $('#submitTitle').show();
+
       $('#cancelTitle').show();
   })
 
   $('#description').click(function() {
     $(this).css('width','500px');
-    $('#submitDesc').show();
+
       $('#cancelDesc').show();
   })
 
   $('#newItem').click(function() {
     $(this).css('width','500px');
-    $('#submitItem').show();
+
       $('#cancelItem').show();
   })
-
+//HOW CAN YOU SUBMIT DATA BY PRESSING ENTER?
   // $('.submit').click(function() {
   //     event.preventDefault();
   //   //Send AJAX request to DB
@@ -70,6 +70,13 @@ $('.userSubmissionForm').hide();
     $('#cancelItem').hide();
   });
 
+  $('#submitAll').click(function() {
+    event.preventDefault();
+    $('.userSubmissionForm').hide();
+    $('header').slideDown().animate({height: "400px"}, 500);
+
+
+  })
 
 });
 
