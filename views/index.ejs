@@ -19,14 +19,14 @@
     <nav>
       <img src="https://cdn2.iconfinder.com/data/icons/law-and-crime-2/512/drawing16-512.png " height="55" width="55" style="padding-left: 0.35em; padding-bottom: 0.5em;"><span id="nav-align">verdict</span>
 
-      <form action="/action">
-        <input type="text" placeholder="Username" name="username">
-        <input type="text" placeholder="Password" name="psw">
+      <form id="user-login">
+        <input type="email" placeholder="email" name="email">
+        <input type="password" placeholder="Password" name="psw">
         <button id="login" type="submit">Login</button>
       </form>
       <button id="register" onclick="openForm()">New user?</button>
 <div class="form-popup" id="myForm">
-  <form action="/action_page.php" class="form-container">
+  <form class="form-container">
     <h1>Register</h1>
 
     <label for="email"><b>Email</b></label>
