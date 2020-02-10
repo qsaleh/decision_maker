@@ -6,4 +6,48 @@ body {
   h1 {
     color: #244751;
   }
+  .poll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Karla', sans-serif;
+    #pollTitle {
+      font-size: large;
+    }
+    #description {
+      font-size: medium;
+    }
+    #alloptions {
+      list-style: none;
+      border: black;
+    }
+    .option {
+      border: 2px solid;
+      border-radius: 5px;
+      padding: 0.5em;
+      margin: 1em;
+      background-color: #e07d67;
+    }
+    .option:hover {
+      background-color: #a75c4c;
+    }
+    .rank {
+
+    }
+  }
+  .button {
+    background-color: #a86046;
+    border-radius: 5px;
+    padding: 0.5em;
+    position: absolute;
+    right: 20px;
+    margin: 20px;
+  }
+  .button:hover {
+    background-color: #e07d67;
+  }
+  .button:active {
+    background-color: #e07d67;
+    transform: translateY(4px);
+  }
 }
