@@ -3,7 +3,7 @@
   <head>
     <title>Home Page</title>
 
-<!-- CSS external stylesheets -->
+    <!-- CSS external stylesheets -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -12,6 +12,16 @@
     <link rel="stylesheet" href="/styles/mainUserPage.css" type="text/css" />
 
 
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
+
+    <!-- Javascript external files -->
+    <script type="text/javascript" src="/scripts/jQuery.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <!-- Javascript external files -->
+    <script type="text/javascript" src="/scripts/nav.js"></script>
 
     <!-- Javascript external files -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
@@ -24,6 +34,34 @@
   </head>
 
   <body>
+<!-- NAV starts here -->
+    <nav>
+      <img src="https://cdn2.iconfinder.com/data/icons/law-and-crime-2/512/drawing16-512.png " height="55" width="55" style="padding-left: 0.35em; padding-bottom: 0.5em;"><span id="nav-align">verdict</span>
+
+      <form id="user-login">
+        <input type="email" placeholder="email" name="email">
+        <input type="password" placeholder="Password" name="psw">
+        <button id="login" type="submit">Login</button>
+      </form>
+      <button id="register" onclick="openForm()">New user?</button>
+  <div class="form-popup" id="myForm">
+  <form class="form-container">
+    <h1>Register</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+  </div>
+
+  </nav>
+<!-- NAV ENDS HERE -->
+
 <!-- HEADER STARTS -->
 
 <header>
@@ -66,52 +104,12 @@
 
   </div>
 
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
- <!-- Javascript external files -->
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/scripts/jQuery.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
- <!-- Javascript external files -->
-    <script type="text/javascript" src="/scripts/nav.js"></script>
-  </head>
+</header>
 
-  <body>
-    <nav>
-      <img src="https://cdn2.iconfinder.com/data/icons/law-and-crime-2/512/drawing16-512.png " height="55" width="55" style="padding-left: 0.35em; padding-bottom: 0.5em;"><span id="nav-align">verdict</span>
-
-      <form id="user-login">
-        <input type="email" placeholder="email" name="email">
-        <input type="password" placeholder="Password" name="psw">
-        <button id="login" type="submit">Login</button>
-      </form>
-      <button id="register" onclick="openForm()">New user?</button>
-<div class="form-popup" id="myForm">
-  <form class="form-container">
-    <h1>Register</h1>
-
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit" class="btn">Submit</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
-</div>
-
-  </nav>
-    <header>
-      <h2 class='headerElements'>Create new poll</h2>
-    </header>
-    <!-- HEADER ENDS -->
+<!-- HEADER ENDS -->
 
 <!-- USER SUBMISSION FORM START HERE -->
-    <div class='userSubmissionForm'>
+<div class='userSubmissionForm'>
 
       <form class='userSubmission'>
         <textarea name="text" id='title' class='textForm'  placeholder="Enter title" ></textarea>
@@ -135,6 +133,7 @@
       <input type='submit' class='submit' id='submitAll'>
     </form>
     </div>
+
     <div class='afterSubmission'>
       <div>
         <h2 class='userSub'>Thank you for your submission! You should recieve <b>two</b> emails in your inbox shortly!</h2>
@@ -206,15 +205,10 @@
         </svg>
       </div>
 
-
-
-
     </div>
 
 
-
-
-
+<!-- USER VOTER DRAG AND DROP STARTS -->
     <div class='poll'>
       <p id='pollTitle'>Poll Title</p>
       <div id='alloptions'>
@@ -234,7 +228,12 @@
           <li id='option_5'>option5</li>
         </div>
       </div>
+
+      <div>
+        <button class='button'>Done</button>
+      </div>
     </div>
-    <button class='button'>Done</button>
+
   </body>
+  </html>
 
