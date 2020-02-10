@@ -12,7 +12,7 @@
 }
 
 .bar1 {
-  fill: #F6CFC2;
+  fill: #E69785;
   height: 21px;
   transition: fill .3s ease;
   cursor: pointer;
@@ -23,9 +23,37 @@
 }
 .bar1:hover,
 .bar1:focus {
-  fill: #C5A69B;
+  fill: #E07D67;
 }
 .bar1:hover text,
 .bar1:focus text {
-  fill: #C5A69B;
+  fill: #E07D67;
 }
+
+
+.chart2 {
+  display: flex;
+  justify-content: center;
+}
+
+.bar2 {
+  fill: #F9CB9C;
+  height: 21px;
+  transition: fill .3s ease;
+  cursor: pointer;
+  font-family: Helvetica, sans-serif;
+}
+.bar2 text {
+  color: black;
+}
+.bar2:hover,
+.bar2:focus {
+  fill: #FAD5B0;
+}
+.bar2:hover text,
+.bar2:focus text {
+  fill: #FAD5B0;
+}
+
+
+
