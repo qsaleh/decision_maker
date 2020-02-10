@@ -68,3 +68,21 @@ textarea {
     text-align: center;
   }
 }
+// AFTER SUBMISSION STYLES
+.afterSubmission {
+  display: flex;
+  margin-top: 10em;
+  margin: auto;
+  justify-content: center;
+  color: #f4805b;
+}
+
+.userSub {
+  margin-top: 5em;
+  text-align: center;
+}
+
+#resendEmail:hover {
+  color: #EDA188;
+  text-decoration: underline;
+}

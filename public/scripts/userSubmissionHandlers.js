@@ -6,6 +6,7 @@ $('.userSubmissionForm').hide();
       $('.textForm').hide();
       $('.submit').hide();
       $('.cancel').hide();
+      $('.afterSubmission').hide();
 
 
   //Here we are going to make the header disappear
@@ -74,8 +75,7 @@ $('.userSubmissionForm').hide();
     event.preventDefault();
     $('.userSubmissionForm').hide();
     $('header').slideDown().animate({height: "400px"}, 500);
-
-
+    $('.afterSubmission').show();
   })
 
 });
