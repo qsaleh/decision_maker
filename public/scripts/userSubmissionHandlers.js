@@ -16,6 +16,7 @@ $('.userSubmissionForm').hide();
       $('.userSubmissionForm').show();
       $('.textForm').show();
       $('#submitAll').show();
+      $('.allPrevCharts').hide();
   });
 
   $('#title').click(function() {
@@ -76,6 +77,8 @@ $('.userSubmissionForm').hide();
     $('.userSubmissionForm').hide();
     $('header').slideDown().animate({height: "400px"}, 500);
     $('.afterSubmission').show();
+    $('.allPrevCharts').show();
+
   })
 
 });
