@@ -17,6 +17,10 @@ $('.allOptions').sortable({
     $('header').slideDown();
     $('.poll').hide();
     $('.afterSubmission').show();
-  })
+    setTimeout(() => {
+      window.location = 'http://localhost:8080/'
+
+    }, 2000)
+  });
 
 });
