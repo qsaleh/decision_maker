@@ -1,6 +1,7 @@
-/* eslint-disable no-undef */
+
 $(document).ready(function() {
-  $('#alloptions').sortable({
+
+$('.allOptions').sortable({
     update: function() {
       let dataToSend = $(this).sortable("serialize");
       $.ajax({
@@ -12,4 +13,3 @@ $(document).ready(function() {
     }
   });
 });
-  
