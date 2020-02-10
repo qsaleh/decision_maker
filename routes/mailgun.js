@@ -1,9 +1,9 @@
 const mailgun = require("mailgun-js");
-const DOMAIN = 'sandboxc80377cd945548fc9752d712103a989a.mailgun.org?';
-const mg = mailgun({apiKey: 'f8faf5ef-7ba55c68', domain: DOMAIN});
+const DOMAIN = 'sandboxc80377cd945548fc9752d712103a989a.mailgun.org';
+const mg = mailgun({apiKey: '0c2dbad208044a12724aaff785060ad0-f8faf5ef-7ba55c68', domain: DOMAIN});
 const data = {
   from: 'Excited User <me@samples.mailgun.org>',
-  to: 'bar@example.com, YOU@sandboxc80377cd945548fc9752d712103a989a.mailgun.org?',
+  to: 'olivefan92@gmail.com',
   subject: 'Hello',
   text: 'Testing some Mailgun awesomness!'
 };
