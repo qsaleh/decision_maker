@@ -66,6 +66,41 @@
 
   </div>
 
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+ <!-- Javascript external files -->
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/nav.js"></script>
+  </head>
+
+  <body>
+    <nav>
+      <img src="https://cdn2.iconfinder.com/data/icons/law-and-crime-2/512/drawing16-512.png " height="55" width="55" style="padding-left: 0.35em; padding-bottom: 0.5em;"><span id="nav-align">verdict</span>
+
+      <form id="user-login">
+        <input type="email" placeholder="email" name="email">
+        <input type="password" placeholder="Password" name="psw">
+        <button id="login" type="submit">Login</button>
+      </form>
+      <button id="register" onclick="openForm()">New user?</button>
+<div class="form-popup" id="myForm">
+  <form class="form-container">
+    <h1>Register</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+  </nav>
+    <header>
+      <h2 class='headerElements'>Create new poll</h2>
     </header>
     <!-- HEADER ENDS -->
 
@@ -175,4 +210,4 @@
 
 
   </body>
-</html>
+
