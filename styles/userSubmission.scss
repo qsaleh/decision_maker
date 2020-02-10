@@ -1,0 +1,70 @@
+// These styles pertain to the user submission page
+
+.userSubmissionForm {
+  background-color: #E4E4E4;
+  width: 80%;
+  height: 45em;
+  margin: auto;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.userSubmission{
+  display: flex;
+  justify-content: center;
+  margin: 1.5em;
+  padding-top: 2em;
+
+
+}
+
+.submit {
+  margin: 0 0.3em;
+  background-color: #50A73F;
+  outline: none;
+  color: white;
+
+}
+
+#submitAll {
+  justify-content: space-evenly;
+  margin-top: 18em;
+  padding: 0.7em;
+}
+
+.fa.cancel {
+font-size: 38px;
+color: #444444;
+}
+textarea {
+  outline: none;
+  resize: none;
+}
+.textForm {
+  background-color: #E4E4E4;
+  border: hidden;
+  font-size: 20px;
+
+}
+
+//Animation for textbox and buttons
+
+.submit:hover {
+  background-color: #408632;
+}
+
+.fa.cancel:hover {
+  color: #A30000;
+}
+
+.textForm:hover {
+  background-color: #DDDDDD
+}
+
+
+@media only screen and (min-width: 1020px) {
+
+  .userSubmissionForm {
+    width: 50%;
+    margin-top: 3em;
+    text-align: center;
+  }
+}
