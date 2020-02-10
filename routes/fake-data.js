@@ -10,14 +10,15 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT *
+    db.query(`SELECT user_id, poll_id, question, date_created, options.id AS option_id, option, rank
     FROM polls
     JOIN options
     ON options.poll_id = polls.id
+    ORDER BY option_id
     ;`)
       .then(data => {
         const polls = data.rows;
-        res.json({ polls });
+        res.json(polls);
       })
       .catch(err => {
         res
