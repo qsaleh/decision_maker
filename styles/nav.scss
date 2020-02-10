@@ -1,74 +1,69 @@
-nav {
-  height: 3em;
-  color: black;
-  top: 0px;
-  z-index: 1;
-  position: fixed;
-  width: 100%;
-  background-color: white;
-}
-.userLogin {
-  width: 40%;
-  position: absolute;
-  bottom: 5%;
-  right: 0.1em;
+
+@font-face {
+  font-family: rez;
+  src: url('REZ.ttf');
 }
 
-#nav-align {
+nav {
+  display: flex;
+  position:sticky;
+  background-color:#eee ;
+  background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+  height: 4em;
+  z-index: 1;
+  width: 100%;
+  color: #E49077;
+  justify-content: space-between;
+  margin: 0.7em;
+}
+
+
+#brand {
 font-size: 3em;
 font-family: rez, sans-serif;
-position: absolute;
-bottom: 5%;
-left: 1.1em;
 }
 
 
-#login {
-  color: black;
-  opacity: 0.5;
+.navElements {
+  display: flex;
+  margin: 1.5em;
+  justify-content: space-between;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+
+
+}
+.formTitle {
+  color: #E49077;
+  text-align: center;
+}
+
+#loginBtn {
+  color: #E49077;
   background-color: transparent;
   border-color: transparent;
-  font-size: 1em;
-  font-family: 'Source Sans Pro', sans-serif;
 }
 
-#register {
-  color: black;
-  opacity: 0.5;
+.logInRegister {
+  color: #E49077;
   background-color: transparent;
   border-color: transparent;
-  font-size: 1em;
-  font-family: 'Source Sans Pro', sans-serif;
-  position: absolute;
-  bottom: 5%;
-  right: 6em;
 }
-
-#login:hover {
-  opacity: 1.0;
-}
-
-#register:hover {
-  opacity: 1.0;
-}
-
 
 /* The popup form - hidden by default */
-.form-popup {
-  display: none;
-  position: fixed;
-  bottom: 510px;
-  right: 1%;
+.form-popupLogin .form-popupRegister {
+
   border: 3px solid #f1f1f1;
-  z-index: 9;
+  z-index: 10;
 }
 
 /* Add styles to the form container */
 .form-container {
   max-width: 500px;
-  width: 300px;
   padding: 10px;
-  background-color: white;
+  background-color:white ;
+  background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
 }
 
 /* Full-width input fields */
@@ -88,7 +83,7 @@ left: 1.1em;
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-  background-color: #4CAF50;
+  background-color: #E49077;
   color: white;
   padding: 16px 20px;
   border: none;
@@ -99,8 +94,10 @@ left: 1.1em;
 }
 
 /* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
+
+.form-container #cancel, #cancelReg{
+  background-color: #F9CB9C;
+  color: white;
 }
 
 /* Add some hover effects to buttons */

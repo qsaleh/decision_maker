@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
   $('header').hide();
+  $('nav').hide();
 $('.allOptions').sortable({
     update: function() {
       let dataToSend = $(this).sortable("serialize");
@@ -14,6 +15,7 @@ $('.allOptions').sortable({
   });
 
   $('.button').click(function() {
+    $('nav').slideDown();
     $('header').slideDown();
     $('.poll').hide();
     $('.afterSubmission').show();
