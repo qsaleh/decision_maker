@@ -38,7 +38,7 @@
     <nav>
       <img src="https://cdn2.iconfinder.com/data/icons/law-and-crime-2/512/drawing16-512.png " height="55" width="55" style="padding-left: 0.35em; padding-bottom: 0.5em;"><span id="nav-align">verdict</span>
 
-      <form class ='userLogin' id="user-login">
+      <form id="user-login">
         <input type="email" placeholder="email" name="email">
         <input type="password" placeholder="Password" name="psw">
         <button id="login" type="submit">Login</button>
@@ -108,106 +108,33 @@
 
 <!-- HEADER ENDS -->
 
-<!-- USER SUBMISSION FORM START HERE -->
-<div class='userSubmissionForm'>
-
-  <form class='userSubmission'>
-    <textarea name="text" id='title' class='textForm'  placeholder="Enter title" ></textarea>
-    <input type='submit' class='submit' id='submitTitle'>
-    <i class="fa fa-times cancel" id='cancelTitle'></i>
-  </form>
 
 
-  <form class='userSubmission'>
-    <textarea name="description" id='description' class='textForm'  placeholder="Enter description" ></textarea>
-    <input type='submit' class='submit' id='submitDesc'>
-    <i class="fa fa-times cancel" id='cancelDesc'></i>
-  </form>
-
-  <form class='userSubmission'>
-    <textarea name="Add Item" id='newItem' class='textForm'  placeholder="Enter item" ></textarea>
-    <input type='submit' class='submit' id='submitItem'>
-    <i class="fa fa-times cancel" id='cancelItem'></i>
-  </form>
-  <form class='userSubmission'>
-  <input type='submit' class='submit' id='submitAll'>
-</form>
-</div>
-<div class='afterSubmission'>
-  <div>
-    <h2 class='userSub'>Thank you for your submission! You should recieve <b>two</b> emails in your inbox shortly!</h2>
-    <h4 class='userSub' id='resendEmail'>Haven't recieved your emails? Click to resend</h4>
-
-  </div>
-
-</div>
-<!-- USER SUBMISSION FORM ENDS -->
-
-    <!-- USER MAIN PAGE STARTS -->
-    <div class='previousPoll allPrevCharts'>
-      <h2 >Previous Polls you've participated in</h2>
-
-    </div>
-
-      <!-- CHARTS -->
-      <div class='charts allPrevCharts'>
-      <h3 class='previousPoll'>What are you craving?</h3>
-      <div class='chart1'>
-        <svg class="chart" width="420" height="150" aria-labelledby="title desc" role="img">
-          <g class="bar1">
-            <rect width="40" height="19"></rect>
-            <text x="45" y="9.5" dy=".35em">Mexican</text>
-          </g>
-          <g class="bar1">
-            <rect width="80" height="19" y="20"></rect>
-            <text x="85" y="28" dy=".35em">Thai</text>
-          </g>
-          <g class="bar1">
-            <rect width="150" height="19" y="40"></rect>
-            <text x="150" y="48" dy=".35em">Bar food</text>
-          </g>
-          <g class="bar1">
-            <rect width="160" height="19" y="60"></rect>
-            <text x="161" y="68" dy=".35em">Chinese</text>
-          </g>
-          <g class="bar1">
-            <rect width="230" height="19" y="80"></rect>
-            <text x="235" y="88" dy=".35em">Pasta</text>
-          </g>
-        </svg>
+<!-- USER VOTER DRAG AND DROP STARTS -->
+    <div class='poll'>
+      <p id='pollTitle'>Poll Title</p>
+      <div id='alloptions'>
+        <div class='option'>
+          <li id='option_1'>option1</li>
+        </div>
+        <div class='option'>
+          <li id='option_2'>option2</li>
+        </div>
+        <div class='option'>
+          <li id='option_3'>option3</li>
+        </div>
+        <div class='option'>
+          <li id='option_4'>option4</ali>
+        </div>
+        <div class='option'>
+          <li id='option_5'>option5</li>
+        </div>
       </div>
 
-      <!-- CHART 2 -->
-      <h3 class='previousPoll'>What should we do?</h3>
-      <div class='chart2'>
-        <svg class="chart" width="420" height="150" aria-labelledby="title desc" role="img">
-          <g class="bar2">
-            <rect width="40" height="19"></rect>
-            <text x="45" y="9.5" dy=".35em">Arcade Games</text>
-          </g>
-          <g class="bar2">
-            <rect width="80" height="19" y="20"></rect>
-            <text x="85" y="28" dy=".35em">Movies</text>
-          </g>
-          <g class="bar2">
-            <rect width="150" height="19" y="40"></rect>
-            <text x="150" y="48" dy=".35em">Chill at home</text>
-          </g>
-          <g class="bar2">
-            <rect width="160" height="19" y="60"></rect>
-            <text x="161" y="68" dy=".35em">Get food</text>
-          </g>
-          <g class="bar2">
-            <rect width="230" height="19" y="80"></rect>
-            <text x="235" y="88" dy=".35em">Bowling</text>
-          </g>
-        </svg>
+      <div>
+        <button class='button'>Done</button>
       </div>
-
     </div>
-
-
-
 
   </body>
   </html>
