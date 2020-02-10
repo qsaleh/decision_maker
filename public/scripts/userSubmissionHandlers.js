@@ -9,7 +9,7 @@ $('.userSubmissionForm').hide();
       $('.afterSubmission').hide();
 
 
-  //Here we are going to make the header disappear
+
   $('.getYoVerdict').click(function() {
       $('header').slideUp();
       //Expanding input box on click
@@ -18,6 +18,9 @@ $('.userSubmissionForm').hide();
       $('#submitAll').show();
       $('.allPrevCharts').hide();
   });
+
+
+  //Here we are going to make the header disappear
 
   $('#title').click(function() {
     $(this).css('width','500px');
