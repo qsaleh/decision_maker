@@ -10,7 +10,7 @@ $('.userSubmissionForm').hide();
 
 
   //Here we are going to make the header disappear
-  $('#toggleSubmissionForm').click(function() {
+  $('.getYoVerdict').click(function() {
       $('header').slideUp();
       //Expanding input box on click
       $('.userSubmissionForm').show();
