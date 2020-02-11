@@ -43,12 +43,12 @@ app.use(express.static("public"));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
-// const usersRoutes = require("./routes/users");
+const usersRoutes = require("./routes/users");
 // const widgetsRoutes = require("./routes/widgets");
 const fakeDataRoutes = require("./routes/fake-data");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-// app.use("/api/users", usersRoutes(db));
+app.use("/api/users", usersRoutes(db));
 // app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/fake-data", fakeDataRoutes(db));
 // Note: mount other resources here, using the same pattern above
@@ -58,6 +58,7 @@ app.use("/api/fake-data", fakeDataRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
+  console.log("index");
   res.render("index");
 });
 app.get("/results", (req, res) => {

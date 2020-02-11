@@ -16,6 +16,13 @@
     <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
 
     <!-- Javascript external files -->
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/userSubmissionHandlers.js"></script>
+    <script src="https://use.fontawesome.com/2d47efe5f8.js"></script>
+
+
+    <!-- Javascript external files -->
     <script type="text/javascript" src="/scripts/jQuery.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -23,11 +30,8 @@
     <!-- Javascript external files -->
     <script type="text/javascript" src="/scripts/nav.js"></script>
 
-    <!-- Javascript external files -->
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/scripts/userSubmissionHandlers.js"></script>
-    <script src="https://use.fontawesome.com/2d47efe5f8.js"></script>
+
+
 
 
 
@@ -38,14 +42,15 @@
     <nav>
       <img src="https://cdn2.iconfinder.com/data/icons/law-and-crime-2/512/drawing16-512.png " height="55" width="55" style="padding-left: 0.35em; padding-bottom: 0.5em;"><span id="nav-align">verdict</span>
 
-      <form id="user-login">
+      <form id="user-login" action="/api/users/login" method="post">
         <input type="email" placeholder="email" name="email">
         <input type="password" placeholder="Password" name="psw">
-        <button id="login" type="submit">Login</button>
+        <button type="submit" id="login">Login</button>
       </form>
+
       <button id="register" onclick="openForm()">New user?</button>
   <div class="form-popup" id="myForm">
-  <form class="form-container">
+  <form class="form-container" action="/api/users/register" method="post">
     <h1>Register</h1>
 
     <label for="email"><b>Email</b></label>
@@ -60,6 +65,7 @@
   </div>
 
   </nav>
+
 <!-- NAV ENDS HERE -->
 
 <!-- HEADER STARTS -->
