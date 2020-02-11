@@ -44,20 +44,12 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
-<<<<<<< HEAD
-// const widgetsRoutes = require("./routes/widgets");
-=======
 const widgetsRoutes = require("./routes/widgets");
->>>>>>> origin
 const fakeDataRoutes = require("./routes/fake-data");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
-<<<<<<< HEAD
-// app.use("/api/widgets", widgetsRoutes(db));
-=======
 app.use("/api/widgets", widgetsRoutes(db));
->>>>>>> origin
 app.use("/api/fake-data", fakeDataRoutes(db));
 // Note: mount other resources here, using the same pattern above
 

@@ -7,6 +7,7 @@
 const express = require('express');
 const app = express();
 const router  = express.Router();
+const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
 
 
@@ -30,12 +31,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
   router.post("/register", (req, res) => {
     const email = req.body.email;
     const password = req.body.psw;
+    const hashedPassword = bcrypt.hashSync(password, 10);
     res.redirect("/");
   });
 
   router.post("/login", (req, res) => {
     const email = req.body.email;
     const password = req.body.psw;
+    const hashedPassword = bcrypt.hashSync(password, 10);
     res.redirect("/");
   });
 
