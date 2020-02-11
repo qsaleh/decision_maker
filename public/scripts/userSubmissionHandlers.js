@@ -17,6 +17,10 @@ $('.userSubmissionForm').hide();
       $('.textForm').show();
       $('#submitAll').show();
       $('.allPrevCharts').hide();
+      $('#newItem2').hide();
+      $('#newItem3').hide();
+      $('#newItem4').hide();
+      $('#newItem5').hide();
   });
 
 
@@ -34,10 +38,35 @@ $('.userSubmissionForm').hide();
       $('#cancelDesc').show();
   })
 
-  $('#newItem').click(function() {
+  $('#newItem1').click(function() {
     $(this).css('width','500px');
+      $('#cancelItem1').show();
+      $('#newItem2').show();
 
-      $('#cancelItem').show();
+  })
+
+  $('#newItem2').click(function() {
+    $(this).css('width','500px');
+      $('#cancelItem2').show();
+      $('#newItem3').show();
+  })
+
+  $('#newItem3').click(function() {
+    $(this).css('width','500px');
+      $('#cancelItem3').show();
+      $('#newItem4').show();
+  })
+
+  $('#newItem4').click(function() {
+    $(this).css('width','500px');
+      $('#cancelItem4').show();
+      $('#newItem5').show();
+  })
+
+  $('#newItem5').click(function() {
+    $(this).css('width','500px');
+      $('#cancelItem5').show();
+
   })
 //HOW CAN YOU SUBMIT DATA BY PRESSING ENTER?
   // $('.submit').click(function() {
@@ -69,10 +98,38 @@ $('.userSubmissionForm').hide();
     $('#cancelDesc').hide();
   });
 
-  $('#cancelItem').click(function() {
-    $('#newItem').css('width','auto');
+  $('#cancelItem1').click(function() {
+    $('#newItem1').css('width','auto');
+    $('#newItem2').hide();
     $('#submitItem').hide();
-    $('#cancelItem').hide();
+    $('#cancelItem1').hide();
+  });
+
+  $('#cancelItem2').click(function() {
+    $('#newItem2').css('width','auto');
+    $('#newItem3').hide();
+    $('#submitItem').hide();
+    $('#cancelItem2').hide();
+  });
+
+  $('#cancelItem3').click(function() {
+    $('#newItem3').css('width','auto');
+    $('#newItem4').hide();
+    $('#submitItem').hide();
+    $('#cancelItem3').hide();
+  });
+
+  $('#cancelItem4').click(function() {
+    $('#newItem4').css('width','auto');
+    $('#newItem5').hide();
+    $('#submitItem').hide();
+    $('#cancelItem4').hide();
+  });
+
+  $('#cancelItem5').click(function() {
+    $('#newItem5').css('width','auto');
+    $('#submitItem').hide();
+    $('#cancelItem5').hide();
   });
 
   $('#submitAll').click(function() {
