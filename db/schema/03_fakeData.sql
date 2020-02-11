@@ -18,6 +18,7 @@ CREATE TABLE polls (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   question VARCHAR(255) NOT NULL,
+  description VARCHAR(255),
   date_created TIMESTAMP NOT NULL
 );
 

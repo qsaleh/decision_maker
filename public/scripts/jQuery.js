@@ -2,19 +2,9 @@
 $(document).ready(function() {
   $('header').hide();
   $('nav').hide();
-$('.allOptions').sortable({
-    update: function() {
-      let dataToSend = $(this).sortable("serialize");
-      $.ajax({
-        method: "GET",
-        dataType: "JSON",
-        url: '/',
-        data: dataToSend,
-      });
-    }
-  });
 
   $('.button').click(function() {
+    sendEmailsToUserThroughMailgunAPI();
     $('nav').slideDown();
     $('header').slideDown();
     $('.poll').hide();
