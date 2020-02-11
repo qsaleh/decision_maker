@@ -62,7 +62,7 @@
   border-radius: 5px;
   padding: 1em;
   margin-left: 3.5em;
-  margin-top: 5em;
+  margin: 5em auto;
 
 
 }
@@ -81,14 +81,13 @@
 
 @media only screen and (min-width: 1020px) {
 
-  .poll {
+  .pollContainer {
     width: 50%;
     margin-top: 3em;
     text-align: center;
   }
 
   .button {
-    margin: auto;
-    margin-top: 5em;
+    margin: 5em auto;
   }
 }
