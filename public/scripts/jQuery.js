@@ -7,7 +7,7 @@ $(document).ready(function() {
     sendEmailsToUserThroughMailgunAPI();
     $('nav').slideDown();
     $('header').slideDown();
-    $('.poll').hide();
+    $('.pollContainer').hide();
     $('.afterSubmission').show();
     setTimeout(() => {
       window.location = 'http://localhost:8080/';

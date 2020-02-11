@@ -1,35 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Results Page</title>
+    <title>Home Page</title>
 
-<!-- CSS external stylesheets -->
+    <!-- CSS external stylesheets -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/userSubmission.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/mainUserPage.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/results.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
- <!-- Javascript external files -->
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!-- Javascript external files -->
     <script type="text/javascript" src="/scripts/jQuery.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <!-- Javascript external files -->
+    <script type="text/javascript" src="/scripts/nav.js"></script>
+
+    <!-- Javascript external files -->
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/logInRegisterForms.js"></script>
+    <script type="text/javascript" src="/scripts/userSubmissionHandlers.js"></script>
+    <script src="https://use.fontawesome.com/2d47efe5f8.js"></script>
+
+
+
   </head>
 
   <body>
-    <header>
-      <h2 class='headerElements'>Create new poll</h2>
-    </header>
-    <div class='poll'>
-      <p id='pollTitle'>Poll Title</p>
-      <ol class="rank">
-        <li>option1</li>
-        <li>option2</li>
-        <li>option3</li>
-        <li>option4</li>
-        <li>option5</li>
-      </ol>
+<!-- NAV starts here -->
+    <nav>
+
+      <span id="brand">verdict</span>
+
+      <div class='navElements'>
+      <button class="register" id='loginBtn'>Log In</button>
+      <div class="form-popupLogin" id="myForm">
+      <form class="form-container" id='login'>
+        <h1 class='formTitle'>Log In</h1>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn" id='cancel' >Cancel</button>
+      </form>
+
+      </div>
+
+  <button class="logInRegister" id='registerBtn' >Register</button>
+  <div class="form-popupRegister" id="myForm">
+  <form class="form-container" id='register'>
+    <h1 class='formTitle'>Register</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Submit</button>
+    <button type="button" class="btn " id='cancelReg' >Close</button>
+  </form>
+
+  </div>
+  </div>
+
+  </nav>
+<!-- NAV ENDS HERE -->
+
+<!-- HEADER STARTS -->
+
+<header>
+  <div class='headerElements'>
+    <div class="headerElementsRight">
+      <h2 class='headerFont'>A <b>simple</b> & <b>powerful</b> online polling tool</h2>
+      <h4 class='headerFont'>An elegant solution that brings people <u><i>together</i></u> </h4>
+      <div class='getYoVerdict'>
+
+        <span ><b>Get</b> your verdict</span>
+        <i class="fa fa-gavel gavelIcon bounce getYoVerdict "></i>
+      </div>
+
     </div>
+
+    <div class='headerElementSVG'>
+      <svg class="chart" width="420" height="150" aria-labelledby="title desc" role="img">
+        <g class="bar", id='bar-1'>
+          <rect width="40" height="19"></rect>
+          <text x="45" y="9.5" dy=".35em" class='shrink'>Cinderella</text>
+
+        </g>
+        <g class="bar" id='bar-2'>
+          <rect width="80" height="19" y="20"></rect>
+          <text x="85" y="28" dy=".35em">Brother Bear</text>
+        </g>
+        <g class="bar" id='bar-3'>
+          <rect width="150" height="19" y="40"></rect>
+          <text x="150" y="48" dy=".35em">The Little Mermaid</text>
+        </g>
+        <g class="bar" id='bar-4'>
+          <rect width="160" height="19" y="60"></rect>
+          <text x="161" y="68" dy=".35em">The Lion King</text>
+        </g>
+        <g class="bar" id='bar-5'>
+          <rect width="230" height="19" y="80"></rect>
+          <text x="235" y="88" dy=".35em">Aladdin</text>
+        </g>
+      </svg>
+
+  </div>
+
+</header>
+<!-- HEADER ENDS -->
+<!-- RESULTS STARTS -->
+<div class='resultsContainer' >
+
+  <!-- CHARTS -->
+  <div class='charts allPrevCharts'>
+      <div class='results'>
+      <h2 >Here are your results for: TITLE</h2>
+      </div>
+    <div class='chart1'>
+      <svg class="chart" id='chartResults' width="420" height="150" aria-labelledby="title desc" role="img">
+        <g class="bar1">
+          <rect width="40" height="19"></rect>
+          <text x="45" y="9.5" dy=".35em">Mexican</text>
+        </g>
+        <g class="bar1">
+          <rect width="80" height="19" y="20"></rect>
+          <text x="85" y="28" dy=".35em">Thai</text>
+        </g>
+        <g class="bar1">
+          <rect width="150" height="19" y="40"></rect>
+          <text x="150" y="48" dy=".35em">Bar food</text>
+        </g>
+        <g class="bar1">
+          <rect width="160" height="19" y="60"></rect>
+          <text x="161" y="68" dy=".35em">Chinese</text>
+        </g>
+        <g class="bar1">
+          <rect width="230" height="19" y="80"></rect>
+          <text x="235" y="88" dy=".35em">Pasta</text>
+        </g>
+      </svg>
+    </div>
+</div>
+
+
   </body>
-</html>
+  </html>
+

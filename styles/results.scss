@@ -1,0 +1,24 @@
+.resultsContainer {
+  display: flex;
+  color: #E0967E;
+  background-color: #E4E4E4;
+  width: 80%;
+  height: 45em;
+  margin: auto;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  justify-content: center;
+}
+
+.results {
+
+  margin: 1.5em;
+  padding-top: 2em;
+}
+
+#chartResults {
+margin-left: 3.5em;
+margin-top: 8em;
+font-size: larger;
+}
