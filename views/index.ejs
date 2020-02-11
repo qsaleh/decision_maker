@@ -13,20 +13,22 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
 
+
+    <script src="https://use.fontawesome.com/2d47efe5f8.js"></script>
+
+
     <!-- Javascript external files -->
-    <script type="text/javascript" src="/scripts/jQuery.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <!-- Javascript external files -->
-    <script type="text/javascript" src="/scripts/nav.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/nav.js"></script> -->
 
     <!-- Javascript external files -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/logInRegisterForms.js"></script>
     <script type="text/javascript" src="/scripts/userSubmissionHandlers.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://use.fontawesome.com/2d47efe5f8.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/jQuery.js"></script> -->
 
 
 
@@ -41,7 +43,7 @@
       <div class='navElements'>
       <button class="register" id='loginBtn'>Log In</button>
       <div class="form-popupLogin" id="myForm">
-      <form class="form-container" id='login'>
+      <form class="form-container" id='login' action="/api/users/login" method="post">
         <h1 class='formTitle'>Log In</h1>
 
         <label for="email"><b>Email</b></label>
@@ -58,7 +60,7 @@
 
   <button class="logInRegister" id='registerBtn' >Register</button>
   <div class="form-popupRegister" id="myForm">
-  <form class="form-container" id='register'>
+  <form class="form-container" id='register' action="/api/users/register" method="post">
     <h1 class='formTitle'>Register</h1>
 
     <label for="email"><b>Email</b></label>
@@ -75,6 +77,7 @@
   </div>
 
   </nav>
+
 <!-- NAV ENDS HERE -->
 
 <!-- HEADER STARTS -->

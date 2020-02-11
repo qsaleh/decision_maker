@@ -20,9 +20,9 @@ $('.allOptions').sortable({
     $('.pollContainer').hide();
     $('.afterSubmission').show();
     setTimeout(() => {
-      window.location = 'http://localhost:8080/'
+      window.location = 'http://localhost:8080/';
 
-    }, 2000)
+    }, 2000);
   });
 
 });

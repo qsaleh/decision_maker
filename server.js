@@ -58,6 +58,7 @@ app.use("/api/fake-data", fakeDataRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
+  console.log("index");
   res.render("index");
 });
 app.get("/results", (req, res) => {
