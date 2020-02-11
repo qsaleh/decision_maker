@@ -44,10 +44,12 @@
 
   }
   .option {
+    list-style: none;
     border-radius: 5px;
     padding: 1em;
     margin: 1em;
     background-color: #EBA58F;
+
   }
   .option:hover {
     background-color: #EEB7A5;
