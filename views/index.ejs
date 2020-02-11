@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/userSubmission.css" type="text/css" />
     <link rel="stylesheet" href="/styles/mainUserPage.css" type="text/css" />
-
-
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
 
@@ -30,8 +28,12 @@
     <!-- Javascript external files -->
     <script type="text/javascript" src="/scripts/nav.js"></script>
 
-
-
+    <!-- Javascript external files -->
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/logInRegisterForms.js"></script>
+    <script type="text/javascript" src="/scripts/userSubmissionHandlers.js"></script>
+    <script src="https://use.fontawesome.com/2d47efe5f8.js"></script>
 
 
 
@@ -40,18 +42,31 @@
   <body>
 <!-- NAV starts here -->
     <nav>
-      <img src="https://cdn2.iconfinder.com/data/icons/law-and-crime-2/512/drawing16-512.png " height="55" width="55" style="padding-left: 0.35em; padding-bottom: 0.5em;"><span id="nav-align">verdict</span>
 
-      <form id="user-login" action="/api/users/login" method="post">
-        <input type="email" placeholder="email" name="email">
-        <input type="password" placeholder="Password" name="psw">
-        <button type="submit" id="login">Login</button>
+      <span id="brand">verdict</span>
+
+      <div class='navElements'>
+      <button class="register" id='loginBtn'>Log In</button>
+      <div class="form-popupLogin" id="myForm">
+      <form class="form-container" id='login'>
+        <h1 class='formTitle'>Log In</h1>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn" id='cancel' >Cancel</button>
       </form>
 
-      <button id="register" onclick="openForm()">New user?</button>
-  <div class="form-popup" id="myForm">
-  <form class="form-container" action="/api/users/register" method="post">
-    <h1>Register</h1>
+      </div>
+
+  <button class="logInRegister" id='registerBtn' >Register</button>
+  <div class="form-popupRegister" id="myForm">
+  <form class="form-container" id='register'>
+    <h1 class='formTitle'>Register</h1>
 
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" required>
@@ -60,8 +75,10 @@
     <input type="password" placeholder="Enter Password" name="psw" required>
 
     <button type="submit" class="btn">Submit</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    <button type="button" class="btn " id='cancelReg' >Close</button>
   </form>
+
+  </div>
   </div>
 
   </nav>
@@ -77,7 +94,7 @@
       <h4 class='headerFont'>An elegant solution that brings people <u><i>together</i></u> </h4>
       <div class='getYoVerdict'>
 
-        <span  ><b>Get</b> your verdict</span>
+        <span ><b>Get</b> your verdict</span>
         <i class="fa fa-gavel gavelIcon bounce getYoVerdict "></i>
       </div>
 
@@ -117,37 +134,36 @@
 <!-- USER SUBMISSION FORM START HERE -->
 <div class='userSubmissionForm'>
 
-      <form class='userSubmission'>
-        <textarea name="text" id='title' class='textForm'  placeholder="Enter title" ></textarea>
-        <input type='submit' class='submit' id='submitTitle'>
-        <i class="fa fa-times cancel" id='cancelTitle'></i>
-      </form>
+  <form class='userSubmission'>
+    <textarea name="text" id='title' class='textForm'  placeholder="Enter title" ></textarea>
+    <input type='submit' class='submit' id='submitTitle'>
+    <i class="fa fa-times cancel" id='cancelTitle'></i>
+  </form>
 
 
-      <form class='userSubmission'>
-        <textarea name="description" id='description' class='textForm'  placeholder="Enter description" ></textarea>
-        <input type='submit' class='submit' id='submitDesc'>
-        <i class="fa fa-times cancel" id='cancelDesc'></i>
-      </form>
+  <form class='userSubmission'>
+    <textarea name="description" id='description' class='textForm'  placeholder="Enter description" ></textarea>
+    <input type='submit' class='submit' id='submitDesc'>
+    <i class="fa fa-times cancel" id='cancelDesc'></i>
+  </form>
 
-      <form class='userSubmission'>
-        <textarea name="Add Item" id='newItem' class='textForm'  placeholder="Enter item" ></textarea>
-        <input type='submit' class='submit' id='submitItem'>
-        <i class="fa fa-times cancel" id='cancelItem'></i>
-      </form>
-      <form class='userSubmission'>
-      <input type='submit' class='submit' id='submitAll'>
-    </form>
-    </div>
+  <form class='userSubmission'>
+    <textarea name="Add Item" id='newItem' class='textForm'  placeholder="Enter item" ></textarea>
+    <input type='submit' class='submit' id='submitItem'>
+    <i class="fa fa-times cancel" id='cancelItem'></i>
+  </form>
+  <form class='userSubmission'>
+  <input type='submit' class='submit' id='submitAll'>
+</form>
+</div>
+<div class='afterSubmission'>
+  <div>
+    <h2 class='userSub'>Thank you for your submission! You should recieve <b>two</b> emails in your inbox shortly!</h2>
+    <h4 class='userSub' id='resendEmail'>Haven't recieved your emails? Click to resend</h4>
 
-    <div class='afterSubmission'>
-      <div>
-        <h2 class='userSub'>Thank you for your submission! You should recieve <b>two</b> emails in your inbox shortly!</h2>
-        <h4 class='userSub' id='resendEmail'>Haven't recieved your emails? Click to resend</h4>
+  </div>
 
-      </div>
-
-    </div>
+</div>
 <!-- USER SUBMISSION FORM ENDS -->
 
     <!-- USER MAIN PAGE STARTS -->
@@ -213,32 +229,6 @@
 
     </div>
 
-
-<!-- USER VOTER DRAG AND DROP STARTS -->
-    <div class='poll'>
-      <p id='pollTitle'>Poll Title</p>
-      <div id='alloptions'>
-        <div class='option'>
-          <li id='option_1'>option1</li>
-        </div>
-        <div class='option'>
-          <li id='option_2'>option2</li>
-        </div>
-        <div class='option'>
-          <li id='option_3'>option3</li>
-        </div>
-        <div class='option'>
-          <li id='option_4'>option4</ali>
-        </div>
-        <div class='option'>
-          <li id='option_5'>option5</li>
-        </div>
-      </div>
-
-      <div>
-        <button class='button'>Done</button>
-      </div>
-    </div>
 
   </body>
   </html>
