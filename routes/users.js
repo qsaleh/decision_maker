@@ -44,6 +44,24 @@ app.use(bodyParser.urlencoded({ extended: true }));
     RETURNING *;
     `, [email, password])
     .then(res => res.rows[0])
+  };
+
+  const getUser = function(email) {
+    return db.query(`SELECT * FROM users
+    WHERE email = $1;
+    `, [email])
+    .then(res => res.rows[0])
+    .catch(e => e.rows[0]);
+  };
+
+  const login = function(emailToCheck, pwdToCheck) {
+    return getUser(emailToCheck)
+    .then(emailToCheck => {
+      if (brypt.compareSync(pwdToCheck, emailToCheck.password)) {
+        return emailToCheck;
+      }
+      return null;
+    });
   }
 
   router.post("/register", (req, res) => {
@@ -61,12 +79,22 @@ app.use(bodyParser.urlencoded({ extended: true }));
   router.post("/login", (req, res) => {
     const email = req.body.email;
     const password = req.body.psw;
-    const hashedPassword = bcrypt.hashSync(password, 10);
+    login(email, password)
+    .then(user => {
+      if (!user) {
+        res.send({error: "error"});
+        return;
+      }
+      req.session.email = email;
+      res.send(email, password);
+    })
+    .catch(e => res.send(e));
+
     res.redirect("/");
   });
 
   router.post('/logout', (req, res) => {
-    req.session.email = null;
+    req.session = null;
     res.redirect("/");
   });
 
