@@ -37,20 +37,36 @@ app.use(bodyParser.urlencoded({ extended: true }));
       });
   });
 
+  const addUser =  function(email, password) {
+    return db.query(`
+    INSERT INTO users (email, password)
+    VALUES ($1, $2)
+    RETURNING *;
+    `, [email, password])
+    .then(res => res.rows[0])
+  }
+
   router.post("/register", (req, res) => {
     const email = req.body.email;
     const password = req.body.psw;
     const hashedPassword = bcrypt.hashSync(password, 10);
-    req.session.email = email;
-    req.session.password = hashedPassword;
-    res.redirect("/");
-
-  });
+    addUser(email, hashedPassword)
+      .then(email => {
+        req.session.email = email;
+        res.redirect("/");
+      })
+      .catch(e => res.send(e));
+    });
 
   router.post("/login", (req, res) => {
     const email = req.body.email;
     const password = req.body.psw;
     const hashedPassword = bcrypt.hashSync(password, 10);
+    res.redirect("/");
+  });
+
+  router.post('/logout', (req, res) => {
+    req.session.email = null;
     res.redirect("/");
   });
 
