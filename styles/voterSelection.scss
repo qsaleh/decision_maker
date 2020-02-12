@@ -10,9 +10,8 @@
   font-family: 'Source Sans Pro', sans-serif;
   margin-top: 2em;
   margin-bottom: 2em;
+  text-align: center;
 }
-
-
 
 
 
@@ -30,14 +29,15 @@
 
   #pollTitle {
     font-size: large;
-    color: black;
+    color:#444444
   }
   #description {
     font-size: medium;
   }
-  .allOptions {
+  #allOptions {
     display: flex;
     flex-direction: column;
+
     list-style: none;
     color: white;
     outline: none;
@@ -45,6 +45,7 @@
   }
   .option {
     list-style: none;
+    width: 11.5em;
     border-radius: 5px;
     padding: 1em;
     margin: 1em;
@@ -65,6 +66,7 @@
   padding: 1em;
   margin-left: 3.5em;
   margin: 5em auto;
+  align-items: center;
 
 
 }

@@ -6,14 +6,14 @@ $(() => {
     url: "/api/fake-data",
     success: function(results) {
       $('.poll').empty();
-      $('.poll').prepend(`<div id='pollTitle'>${results[0]["question"]}</div>
+      $('.poll').prepend(`<div id='pollTitle'><b>${results[0]["question"]}</b></div>
       <ul id='allOptions'>`);
       resultsArray = results;
       for(const choice of results) {
         console.log(choice);
         $('#allOptions').append(
           `
-            <li data-name= '${choice['option']}' id='option_${choice['option_id']}'>${choice['option']}</li>
+            <li class='option' data-name= '${choice['option']}' id='option_${choice['option_id']}'>${choice['option']}</li>
           `
         );
       }
@@ -64,13 +64,13 @@ $('.button').click(function() {
       data: resultsArray
     }
     );
-   console.log('post req sent');
 
 
-  //   setTimeout(() => {
-  //     window.location = 'http://localhost:8080/';
 
-  //   }, 2000);
+    setTimeout(() => {
+      window.location = 'http://localhost:8080/';
+
+    }, 2000);
   });
 
 
