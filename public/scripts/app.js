@@ -10,7 +10,11 @@ $(() => {
       <ul id='allOptions'>`);
       resultsArray = results;
       for (const choice of results) {
+<<<<<<< HEAD
         $('#allOptions').append(
+=======
+        $('#alloptions').append(
+>>>>>>> 9829b204496967de29424bdd3169e1b8f71d9af3
           `
             <li class='option' data-name= '${choice['option']}' id='option_${choice['option_id']}'>${choice['option']}</li>
           `
