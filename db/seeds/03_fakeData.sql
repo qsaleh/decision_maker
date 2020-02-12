@@ -1,8 +1,9 @@
 -- users table seeds here (Example)
-INSERT INTO users (name, email, password) VALUES ('Alice', 'Alice@mx.com', 'password');
+INSERT INTO users (email, password) VALUES ('Alice@mx.com', 'password');
 
 -- polls table seeds here (Example)
-INSERT INTO polls (user_id, question, date_created) VALUES (1, 'what movie do you like the most?', Now());
+INSERT INTO polls (user_id, question, description, date_created) 
+VALUES (1, 'what movie do you like the most?', 'rank your movie preference', Now());
 
 -- options table seeds here (Example)
 INSERT INTO options (poll_id, option, rank) VALUES (1, 'Star Wars', 1);
