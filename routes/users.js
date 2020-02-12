@@ -47,7 +47,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
   };
 
   const getUser = function(email) {
-    console.log("here in getUser");
     return db.query(`SELECT * FROM users
     WHERE email = $1;
     `, [email])
@@ -56,7 +55,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
   };
 
   const login = function(emailToCheck, pwdToCheck) {
-    console.log("here in login");
     return getUser(emailToCheck)
     .then(user => {
       if (bcrypt.compareSync(pwdToCheck, user.password)) {
