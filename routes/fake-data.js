@@ -26,7 +26,6 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-<<<<<<< HEAD
   // router.post("/", (req, res) => {
   //   const valuesPolls = [req.title, req.description];
   //   const valuesOptions = [req.item1, req.item2, req.item3, req.item4, req.item5];
@@ -60,9 +59,3 @@ module.exports = (db) => {
   return router;
 
 };
-=======
-  
-  return router;
-  
-};
->>>>>>> 9829b204496967de29424bdd3169e1b8f71d9af3
