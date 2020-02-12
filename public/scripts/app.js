@@ -10,7 +10,6 @@ $(() => {
       <ul id='allOptions'>`);
       resultsArray = results;
       for(const choice of results) {
-        console.log(choice);
         $('#allOptions').append(
           `
             <li class='option' data-name= '${choice['option']}' id='option_${choice['option_id']}'>${choice['option']}</li>
@@ -29,21 +28,15 @@ $(() => {
         update: function(event, ui) {
          const newIndex = ui.item.index();
           const oldIndex = $(this).attr('dataPreviousIndex');
-          console.log('new', newIndex);
           console.log('old', oldIndex);
+          console.log('new', newIndex);
 
-          let swapped = resultsArray[newIndex];
-          resultsArray[newIndex] = resultsArray[oldIndex];
-          resultsArray[oldIndex] = swapped;
-          console.log(resultsArray);
+          let swapped = resultsArray[oldIndex];
+          resultsArray[oldIndex] = resultsArray[newIndex];
+          resultsArray[newIndex] = swapped;
+          console.log('oldArray', resultsArray[oldIndex], 'newArray', resultsArray[newIndex], 'Array', resultsArray);
 
-          let dataToSend = $(this).sortable("serialize");
-          $.ajax({
-            method: "GET",
-            dataType: "JSON",
-            url: '/',
-            data: dataToSend,
-          });
+
         }
       });
     });

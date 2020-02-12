@@ -1,31 +1,17 @@
-// app.get("/results", (req, res) => {
-//   res.render("results");
-// });
-// app.get("/selection", (req, res) => {
-//   res.render("selection");
-// });
-
-
 const express = require('express');
 const app = express();
 const router  = express.Router();
-const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
-const cookieSession = require("cookie-session");
+const {scoringOptions}  = require('../public/scripts/scoringOptions.js');
+
 
 module.exports = (db) => {
-
-  app.use(
-    cookieSession({
-      name: "session",
-      keys: ["minty"],
-    })
-  );
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
     router.post("/selection", (req, res) => {
       const setData = [];
+
       for(const key in req.body) {
 
        for(const key2 in req.body[key]) {
@@ -37,17 +23,22 @@ app.use(bodyParser.urlencoded({ extended: true }));
        }
 
       }
+
       const data = Array.from(new Set(setData));
 
 
      //ADDING IT TO THE DATABASE!
-        console.log(data)
+
+     const objData = {};
       data.forEach((data, index) => {
-        console.log(data[index])
+
+        objData[`${data}`] = `${index + 1}`;
+
         db.query(`UPDATE options
         SET rank = ${index + 1}
         WHERE option = '${data}';
         `)
+
         .then (res => {
           console.log('success');
 
@@ -57,8 +48,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
         })
       })
 
+      const scores = scoringOptions(objData);
 
-  });
+
+    });
 
   return router;
 };

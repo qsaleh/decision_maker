@@ -14,21 +14,22 @@ const scoringOptions = (object) => {
 
 const size = Object.keys(object).length;
 const results = {};
+console.log('inside Function: SIZE of Object ', size);
 for(const key in object) {
   switch(object[key]) {
-    case 1:
+    case '1':
       results[key] = size;
       break;
-    case 2:
+    case '2':
       results[key] = size - 1;
       break;
-    case 3:
+    case '3':
       results[key] = size - 2;
       break;
-    case 4:
+    case '4':
     results[key] = size - 3;
     break;
-    case 5:
+    case '5':
       results[key] = size - 4;
     break;
   }
@@ -39,5 +40,5 @@ return results;
 
 module.exports = {
   scoringOptions
-};
+}
 

@@ -69,8 +69,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/selection", (req, res) => {
-  console.log("index");
   res.render("selection");
+});
+
+app.get("/results", (req, res) => {
+  res.render("results");
 });
 
 app.listen(PORT, () => {
