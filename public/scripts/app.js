@@ -1,28 +1,42 @@
 /* eslint-disable no-undef */
-
+let resultsArray = [];
 $(() => {
   $.ajax({
     method: "GET",
     url: "/api/fake-data",
     success: function(results) {
       $('.poll').empty();
-      $('.poll').prepend(`<p id='pollTitle'>${results[0]["question"]}</p>
-      <div id='alloptions'>`);
-      for (const choice of results) {
+      $('.poll').prepend(`<div id='pollTitle'>${results[0]["question"]}</div>
+      <ul id='allOptions'>`);
+      resultsArray = results;
+      for(const choice of results) {
         console.log(choice);
-        $('#alloptions').append(
+        $('#allOptions').append(
           `
-          <div class='option'>
-            <li id='option_${choice['option_id']}'>${choice['option']}</li>
-          </div>
+            <li data-name= '${choice['option']}' id='option_${choice['option_id']}'>${choice['option']}</li>
           `
         );
       }
     }
   })
     .then(() => {
-      $('#alloptions').sortable({
-        update: function() {
+
+
+      $('#allOptions').sortable({
+        start: function(event, ui) {
+          $(this).attr('dataPreviousIndex', ui.item.index());
+        },
+        update: function(event, ui) {
+         const newIndex = ui.item.index();
+          const oldIndex = $(this).attr('dataPreviousIndex');
+          console.log('new', newIndex);
+          console.log('old', oldIndex);
+
+          let swapped = resultsArray[newIndex];
+          resultsArray[newIndex] = resultsArray[oldIndex];
+          resultsArray[oldIndex] = swapped;
+          console.log(resultsArray);
+
           let dataToSend = $(this).sortable("serialize");
           $.ajax({
             method: "GET",
@@ -33,5 +47,31 @@ $(() => {
         }
       });
     });
-  
+
+
+
+
+$('.button').click(function() {
+  // event.preventDefault();
+  $('nav').slideDown();
+  $('header').slideDown();
+  $('.pollContainer').hide();
+  $('.afterSubmission').show();
+//POST REQUEST
+
+    $.post("/api/selection/selection",
+    {
+      data: resultsArray
+    }
+    );
+   console.log('post req sent');
+
+
+  //   setTimeout(() => {
+  //     window.location = 'http://localhost:8080/';
+
+  //   }, 2000);
+  });
+
+
 });
