@@ -43,12 +43,27 @@ font-family: rez, sans-serif;
   color: #E49077;
   background-color: transparent;
   border-color: transparent;
+  cursor: pointer;
+}
+
+#logoutBtn {
+  color: grey;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+#username {
+  color: #E49077;
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .logInRegister {
   color: #E49077;
   background-color: transparent;
   border-color: transparent;
+  cursor: pointer;
 }
 
 /* The popup form - hidden by default */

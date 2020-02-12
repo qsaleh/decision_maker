@@ -26,7 +26,18 @@ module.exports = (db) => {
     const valuesOptions =
     [req.body.AddItem[0], req.body.AddItem[1], req.body.AddItem[2], req.body.AddItem[3], req.body.AddItem[4]].filter(Boolean);
     const valuesLength = valuesOptions.length;
-    
+    let values = ``;
+    for (let i = 0; i < valuesLength; i++) {
+      values += `(`;
+      values += `'${valuesOptions[i]}'`;
+      if (i < valuesLength - 1) {
+        values += `),\n`;
+      } else {
+        values += `)`;
+      }
+    }
+    console.log(values);
+
     db.query(queryStringPolls, valuesPolls)
       .then(res2 => {
         const poll = res2.rows[0];
