@@ -37,20 +37,66 @@ app.use(bodyParser.urlencoded({ extended: true }));
       });
   });
 
+  const addUser =  function(email, password) {
+    return db.query(`
+    INSERT INTO users (email, password)
+    VALUES ($1, $2)
+    RETURNING *;
+    `, [email, password])
+    .then(res => res.rows[0])
+  };
+
+  const getUser = function(email) {
+    return db.query(`SELECT * FROM users
+    WHERE email = $1;
+    `, [email])
+    .then(res => res.rows[0])
+    .catch(e => e.rows[0]);
+  };
+
+  const login = function(emailToCheck, pwdToCheck) {
+    return getUser(emailToCheck)
+    .then(user => {
+      if (bcrypt.compareSync(pwdToCheck, user.password)) {
+        console.log("user", user);
+        return user;
+      }
+      return null;
+    });
+  };
+
   router.post("/register", (req, res) => {
     const email = req.body.email;
     const password = req.body.psw;
     const hashedPassword = bcrypt.hashSync(password, 10);
-    req.session.email = email;
-    req.session.password = hashedPassword;
-    res.redirect("/");
-
-  });
+    addUser(email, hashedPassword)
+      .then(user => {
+        req.session = user;
+        res.redirect("/");
+      })
+      .catch(e => res.send(e));
+    });
 
   router.post("/login", (req, res) => {
     const email = req.body.email;
     const password = req.body.psw;
-    const hashedPassword = bcrypt.hashSync(password, 10);
+    login(email, password)
+    .then(user => {
+      if (!user) {
+        console.log('not user');
+        res.redirect("/");
+      }
+      console.log("user in login", user);
+      req.session = user;
+      res.redirect("/");
+    })
+    .catch(e => res.send(e));
+
+
+  });
+
+  router.post("/logout", (req, res) => {
+    req.session = null;
     res.redirect("/");
   });
 
