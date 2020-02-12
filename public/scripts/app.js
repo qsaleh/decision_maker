@@ -9,7 +9,6 @@ $(() => {
       $('.poll').prepend(`<p id='pollTitle'>${results[0]["question"]}</p>
       <div id='alloptions'>`);
       for (const choice of results) {
-        console.log(choice);
         $('#alloptions').append(
           `
           <div class='option'>
