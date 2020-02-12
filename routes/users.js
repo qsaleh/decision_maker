@@ -83,6 +83,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
     login(email, password)
     .then(user => {
       if (!user) {
+        console.log('not user');
         res.redirect("/");
       }
       console.log("user in login", user);
