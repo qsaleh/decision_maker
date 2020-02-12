@@ -4,7 +4,6 @@ $(document).ready(function() {
   $('nav').hide();
 
   $('.button').click(function() {
-    sendEmailsToUserThroughMailgunAPI();
     $('nav').slideDown();
     $('header').slideDown();
     $('.pollContainer').hide();
