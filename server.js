@@ -59,7 +59,8 @@ app.use("/api/fake-data", fakeDataRoutes(db));
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
   console.log("index");
-  const templateVars = {username: req.session.email}
+  const templateVars = {username: req.session.email};
+  console.log("templateVars", templateVars);
   res.render("index", templateVars);
 });
 app.get("/results", (req, res) => {

@@ -47,6 +47,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
   };
 
   const getUser = function(email) {
+    console.log("here in getUser");
     return db.query(`SELECT * FROM users
     WHERE email = $1;
     `, [email])
@@ -55,10 +56,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
   };
 
   const login = function(emailToCheck, pwdToCheck) {
+    console.log("here in login");
     return getUser(emailToCheck)
-    .then(emailToCheck => {
-      if (brypt.compareSync(pwdToCheck, emailToCheck.password)) {
-        return emailToCheck;
+    .then(user => {
+      if (bcrypt.compareSync(pwdToCheck, user.password)) {
+        console.log("user", user);
+        return user;
       }
       return null;
     });
@@ -69,8 +72,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
     const password = req.body.psw;
     const hashedPassword = bcrypt.hashSync(password, 10);
     addUser(email, hashedPassword)
-      .then(email => {
-        req.session = email;
+      .then(user => {
+        req.session = user;
         res.redirect("/");
       })
       .catch(e => res.send(e));
@@ -82,15 +85,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
     login(email, password)
     .then(user => {
       if (!user) {
-        res.send({error: "error"});
-        return;
+        res.redirect("/");
       }
-      req.session = email;
-      res.send(email, password);
+      console.log("user in login", user);
+      req.session = user;
+      res.redirect("/");
     })
     .catch(e => res.send(e));
 
-    res.redirect("/");
+
   });
 
   router.post("/logout", (req, res) => {
