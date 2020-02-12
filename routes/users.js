@@ -62,7 +62,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
       }
       return null;
     });
-  }
+  };
 
   router.post("/register", (req, res) => {
     const email = req.body.email;
@@ -70,7 +70,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
     const hashedPassword = bcrypt.hashSync(password, 10);
     addUser(email, hashedPassword)
       .then(email => {
-        req.session.email = email;
+        req.session = email;
         res.redirect("/");
       })
       .catch(e => res.send(e));
@@ -85,7 +85,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
         res.send({error: "error"});
         return;
       }
-      req.session.email = email;
+      req.session = email;
       res.send(email, password);
     })
     .catch(e => res.send(e));
@@ -93,7 +93,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
     res.redirect("/");
   });
 
-  router.post('/logout', (req, res) => {
+  router.post("/logout", (req, res) => {
     req.session = null;
     res.redirect("/");
   });

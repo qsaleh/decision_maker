@@ -39,8 +39,16 @@
     <nav>
 
       <span id="brand">verdict</span>
+      <% if(username){ %>
 
+      <span>Logged in as: <%= username %></span>
       <div class='navElements'>
+      <form class="form-container" id="log-out" action="/api/users/logout" method="post">
+        <button>Log out</button>
+      </form>
+
+      <% } else{ %>
+
       <button class="register" id='loginBtn'>Log In</button>
       <div class="form-popupLogin" id="myForm">
       <form class="form-container" id='login' action="/api/users/login" method="post">
@@ -71,6 +79,7 @@
 
     <button type="submit" class="btn">Submit</button>
     <button type="button" class="btn " id='cancelReg' >Close</button>
+     <% } %>
   </form>
 
   </div>
