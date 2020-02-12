@@ -1,12 +1,12 @@
-//This file refreshes the main page using AJAX
-//and brings the user into the poll creation page
-$(document).ready(function() {
-//Hiding the submission fields until click
-$('.userSubmissionForm').hide();
-      $('.textForm').hide();
-      $('.submit').hide();
-      $('.cancel').hide();
-      $('.afterSubmission').hide();
+  //This file refreshes the main page using AJAX
+  //and brings the user into the poll creation page
+  $(document).ready(function() {
+  //Hiding the submission fields until click
+  $('.userSubmissionForm').hide();
+    $('.textForm').hide();
+    $('.submit').hide();
+    $('.cancel').hide();
+    $('.afterSubmission').hide();
 
 
 
@@ -68,7 +68,7 @@ $('.userSubmissionForm').hide();
       $('#cancelItem5').show();
 
   })
-//HOW CAN YOU SUBMIT DATA BY PRESSING ENTER?
+  //HOW CAN YOU SUBMIT DATA BY PRESSING ENTER?
   // $('.submit').click(function() {
   //     event.preventDefault();
   //   //Send AJAX request to DB
@@ -79,8 +79,8 @@ $('.userSubmissionForm').hide();
   //   //Send AJAX request to DB
   // });
 
-//When submitting a new ITEM add an extra step where a new
-//form box is inserted asking if they want to add another item
+  //When submitting a new ITEM add an extra step where a new
+  //form box is inserted asking if they want to add another item
   // $('.submit').click(function() {
   //     event.preventDefault();
   //   //Send AJAX request to DB
@@ -132,15 +132,26 @@ $('.userSubmissionForm').hide();
     $('#cancelItem5').hide();
   });
 
-  $('#submitAll').click(function() {
-    event.preventDefault();
-    $('.userSubmissionForm').hide();
-    $('header').slideDown().animate({height: "400px"}, 500);
-    $('.afterSubmission').show();
-    $('.allPrevCharts').show();
+<<<<<<< HEAD
+  // $('#submitAll').click(function() {
+  //   event.preventDefault();
+=======
+  // $('#submitAll').click(function(e) {
+  //   e.preventDefault();
+  //   // sendEmailsToUserThroughMailgunAPI();
+>>>>>>> 9829b204496967de29424bdd3169e1b8f71d9af3
+  //   $('.userSubmissionForm').hide();
+  //   $('header').slideDown().animate({height: "400px"}, 500);
+  //   $('.afterSubmission').show();
+  //   $('.allPrevCharts').show();
+<<<<<<< HEAD
+=======
 
-  })
+  // })
+
+  });
+>>>>>>> 9829b204496967de29424bdd3169e1b8f71d9af3
+
+  // })
 
 });
-
-

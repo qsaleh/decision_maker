@@ -40,4 +40,3 @@ return results;
 module.exports = {
   scoringOptions
 };
-

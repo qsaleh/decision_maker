@@ -39,7 +39,15 @@
     <nav>
 
       <span id="brand">verdict</span>
+      <% if(username){ %>
+      <div class='navElements'>
+      <span id="username">Logged in as: <%= username %></span>
 
+      <form action="/api/users/logout" method="post">
+        <button id="logoutBtn">Not you?</button>
+      </form>
+      </div>
+      <% } else{ %>
       <div class='navElements'>
       <button class="register" id='loginBtn'>Log In</button>
       <div class="form-popupLogin" id="myForm">
@@ -58,7 +66,7 @@
 
       </div>
 
-  <button class="logInRegister" id='registerBtn' >Register</button>
+  <button class="logInRegister" id='registerBtn' >Not a User?</button>
   <div class="form-popupRegister" id="myForm">
   <form class="form-container" id='register' action="/api/users/register" method="post">
     <h1 class='formTitle'>Register</h1>
@@ -71,6 +79,7 @@
 
     <button type="submit" class="btn">Submit</button>
     <button type="button" class="btn " id='cancelReg' >Close</button>
+     <% } %>
   </form>
 
   </div>
@@ -128,48 +137,24 @@
 
 <!-- USER SUBMISSION FORM START HERE -->
 <div class='userSubmissionForm'>
-
-  <form class='userSubmission'>
+  <form action="/api/new-poll/submit" method="post" class='userSubmission'>
     <textarea name="text" id='title' class='textForm'  placeholder="Enter title" ></textarea>
-    <input type='submit' class='submit' id='submitTitle'>
     <i class="fa fa-times cancel" id='cancelTitle'></i>
-  </form>
-
-
-  <form class='userSubmission'>
     <textarea name="description" id='description' class='textForm'  placeholder="Enter description" ></textarea>
     <input type='submit' class='submit' id='submitDesc'>
     <i class="fa fa-times cancel" id='cancelDesc'></i>
-  </form>
-
-  <form class='userSubmission'>
-    <textarea name="Add Item" id='newItem1' class='textForm'  placeholder="Enter item" ></textarea>
-    <input type='submit' class='submit' id='submitItem'>
+    <textarea name="AddItem" id='newItem1' class='textForm'  placeholder="Enter item" ></textarea>
     <i class="fa fa-times cancel" id='cancelItem1'></i>
-  </form>
-  <form class='userSubmission'>
-    <textarea name="Add Item" id='newItem2' class='textForm'  placeholder="Enter item" ></textarea>
-    <input type='submit' class='submit' id='submitItem'>
+    <textarea name="AddItem" id='newItem2' class='textForm'  placeholder="Enter item" ></textarea>
     <i class="fa fa-times cancel" id='cancelItem2'></i>
-  </form>
-  <form class='userSubmission'>
-    <textarea name="Add Item" id='newItem3' class='textForm'  placeholder="Enter item" ></textarea>
-    <input type='submit' class='submit' id='submitItem'>
+    <textarea name="AddItem" id='newItem3' class='textForm'  placeholder="Enter item" ></textarea>
     <i class="fa fa-times cancel" id='cancelItem3'></i>
-  </form>
-  <form class='userSubmission'>
-    <textarea name="Add Item" id='newItem4' class='textForm'  placeholder="Enter item" ></textarea>
-    <input type='submit' class='submit' id='submitItem4'>
+    <textarea name="AddItem" id='newItem4' class='textForm'  placeholder="Enter item" ></textarea>
     <i class="fa fa-times cancel" id='cancelItem4'></i>
-  </form>
-  <form class='userSubmission'>
-    <textarea name="Add Item" id='newItem5' class='textForm'  placeholder="Enter item" ></textarea>
-    <input type='submit' class='submit' id='submitItem5'>
+    <textarea name="AddItem" id='newItem5' class='textForm'  placeholder="Enter item" ></textarea>
     <i class="fa fa-times cancel" id='cancelItem5'></i>
+    <input type='submit' class='submit' id='submitAll'>
   </form>
-  <form class='userSubmission'>
-  <input type='submit' class='submit' id='submitAll'>
-</form>
 </div>
 <div class='afterSubmission'>
   <div>
@@ -247,4 +232,3 @@
 
   </body>
   </html>
-

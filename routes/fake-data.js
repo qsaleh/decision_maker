@@ -9,7 +9,7 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
+  router.get("/", (req, res) => { // use cookies to specify the user
     db.query(`SELECT user_id, poll_id, question, date_created, options.id AS option_id, option, rank
     FROM polls
     JOIN options
