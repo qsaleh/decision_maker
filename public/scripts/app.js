@@ -1,8 +1,11 @@
 let resultsArray = [];
 $(() => {
+  console.log(window.location.href, "href frm get fake-data")
+  const idSlices = window.location.href.split('/')
+  console.log(idSlices[idSlices.length-1], 'id')
   $.ajax({
     method: "GET",
-    url: "/api/fake-data",
+    url: `/api/fake-data/${idSlices[idSlices.length-1]}`,
     success: function(results) {
       $('.poll').empty();
       console.log('here');

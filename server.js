@@ -48,6 +48,7 @@ const widgetsRoutes = require("./routes/widgets");
 const fakeDataRoutes = require("./routes/fake-data");
 const newPollRoutes = require("./routes/new-poll");
 const selectionRoutes = require("./routes/selection");
+const resultsRoutes = require("./routes/results");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -55,6 +56,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/fake-data", fakeDataRoutes(db));
 app.use("/api/new-poll", newPollRoutes(db));
 app.use("/api/selection", selectionRoutes(db));
+app.use("/api/results", resultsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 
@@ -69,12 +71,15 @@ app.get("/", (req, res) => {
 });
 app.get("/selection/:id", (req, res) => {
   exports.pollId = req.params.id;
+
   const templateVars = {pollId: req.params.id};
   // module.exports = poolId;
   res.render("selection", templateVars);
 });
 app.get("/results", (req, res) => {
-  res.render("results");
+  // exports.pollId = req.params.id;
+  const templateVars = {pollId: req.params.id};
+  res.render("results", templateVars);
 });
 
 app.listen(PORT, () => {
