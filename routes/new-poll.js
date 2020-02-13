@@ -78,7 +78,7 @@ module.exports = (db) => {
               }
               console.log("values", values);
               console.log("response.id", response.id);
-              sendEmailToUser('qmsaleh@gmail.com', response.id);
+              sendEmailToUser(req.session.email, response.id);
               db.query(`
               INSERT INTO options (poll_id, option)
               VALUES ${values};

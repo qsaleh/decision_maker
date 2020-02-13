@@ -11,7 +11,7 @@ module.exports = (db) => {
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
-    router.post("/selection/:id", (req, res) => {
+    router.post("/:id", (req, res) => {
       console.log("This is req in selection.js",req);
       const setData = [];
 
@@ -51,7 +51,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
     });
 
     const scores = scoringOptions(objData);
-    sendEmailToUser('qmsaleh@gmail.com');
+
+    db.query(`
+    SELECT email FROM users
+    JOIN polls ON users.id = polls.user_id
+    WHERE polls.id = ${req.params.id};`)
+    .then (email => {
+      sendEmailToUser(email, req.params.id);
+    })
+
+
 
       db.query(`
       SELECT option, final_rank FROM final_ranks
