@@ -42,7 +42,7 @@ module.exports = (db) => {
 
   //   return db.query(queryStringPolls, valuesPolls)
   //     .then(res => {
-  //     // const user = res.rows[0][/*access last key*/];
+  //     const user = res.rows[0][/*access last key*/];
   //       // const items = [req.item1, req.item2, req.item3, req.item].filter(Boolean)
   //       // items.forEach(item => addOptionToPoll(pollId, item))
 

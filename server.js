@@ -61,6 +61,7 @@ app.use("/api/selection", selectionRoutes(db));
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+
 app.get("/", (req, res) => {
   const templateVars = {username: req.session.email};
   console.log("templateVars", templateVars);

@@ -12,11 +12,11 @@ const scoringOptions = (object) => {
 //if(rank = 4) then score = n-3
 //if(rank = 5) then score = n-4
 
-  const size = Object.keys(object).length;
-  const results = {};
-  console.log('inside Function: SIZE of Object ', size);
-  for (const key in object) {
-    switch (object[key]) {
+const size = Object.keys(object).length;
+const results = {};
+console.log('inside Function: SIZE of Object ', size);
+for(const key in object) {
+  switch(object[key]) {
     case '1':
       results[key] = size;
       break;
@@ -27,16 +27,18 @@ const scoringOptions = (object) => {
       results[key] = size - 2;
       break;
     case '4':
-      results[key] = size - 3;
-      break;
+    results[key] = size - 3;
+    break;
     case '5':
       results[key] = size - 4;
-      break;
-    }
+    break;
   }
-  return results;
-};
+}
+return results;
+
+}
 
 module.exports = {
   scoringOptions
-};
+}
+

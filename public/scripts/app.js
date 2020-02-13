@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 let resultsArray = [];
 $(() => {
   $.ajax({
@@ -49,8 +48,6 @@ $(() => {
     );
     setTimeout(() => {
       window.location = 'http://localhost:8080/';
-  
     }, 2000);
   });
 });
-
