@@ -48,11 +48,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
     });
 
     const scores = scoringOptions(objData);
-<<<<<<< HEAD
     sendEmailToUser('qmsaleh@gmail.com');
-=======
-    sendEmailToUser('ahyagoub40@gmail.com');
->>>>>>> master
   });
 
   return router;
