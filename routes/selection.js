@@ -3,7 +3,7 @@ const app = express();
 const router  = express.Router();
 const bodyParser = require("body-parser");
 const {scoringOptions}  = require('../public/scripts/scoringOptions.js');
-
+const sendEmailToUser = require('./sendgrid');
 
 module.exports = (db) => {
 
@@ -48,7 +48,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
     });
 
     const scores = scoringOptions(objData);
-    sendEmailToUser('olivefan92@gmail.com');
+    sendEmailToUser('ahyagoub40@gmail.com');
   });
 
   return router;
