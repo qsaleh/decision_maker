@@ -3,7 +3,7 @@ const app = express();
 const router  = express.Router();
 const bodyParser = require("body-parser");
 const {scoringOptions}  = require('../public/scripts/scoringOptions.js');
-
+const sendEmailToUser = require('./sendgrid');
 
 module.exports = (db) => {
 
