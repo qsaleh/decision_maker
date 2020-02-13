@@ -137,23 +137,42 @@
 
 <!-- USER SUBMISSION FORM START HERE -->
 <div class='userSubmissionForm'>
-  <form action="/api/new-poll/submit" method="post" class='userSubmission'>
+  <form action="/api/new-poll/submit" method="POST" class='userSubmission'>
+    <div>
+      <div class='subForms'>
     <textarea name="text" id='title' class='textForm'  placeholder="Enter title" ></textarea>
     <i class="fa fa-times cancel" id='cancelTitle'></i>
+      </div>
+      <div class='subForms'>
     <textarea name="description" id='description' class='textForm'  placeholder="Enter description" ></textarea>
     <input type='submit' class='submit' id='submitDesc'>
     <i class="fa fa-times cancel" id='cancelDesc'></i>
+   </div>
+   <div class='subForms'>
     <textarea name="AddItem" id='newItem1' class='textForm'  placeholder="Enter item" ></textarea>
     <i class="fa fa-times cancel" id='cancelItem1'></i>
+  </div>
+
+  <div class='subForms'>
     <textarea name="AddItem" id='newItem2' class='textForm'  placeholder="Enter item" ></textarea>
     <i class="fa fa-times cancel" id='cancelItem2'></i>
+  </div>
+  <div class='subForms'>
     <textarea name="AddItem" id='newItem3' class='textForm'  placeholder="Enter item" ></textarea>
     <i class="fa fa-times cancel" id='cancelItem3'></i>
+  </div>
+  <div class='subForms'>
     <textarea name="AddItem" id='newItem4' class='textForm'  placeholder="Enter item" ></textarea>
     <i class="fa fa-times cancel" id='cancelItem4'></i>
+  </div>
+    <div class='subForms'>
     <textarea name="AddItem" id='newItem5' class='textForm'  placeholder="Enter item" ></textarea>
     <i class="fa fa-times cancel" id='cancelItem5'></i>
+    </div>
+    <div class='subForms'>
     <input type='submit' class='submit' id='submitAll'>
+    </div>
+  </div>
   </form>
 </div>
 <div class='afterSubmission'>

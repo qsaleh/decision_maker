@@ -10,25 +10,23 @@ const finalScore = (objNew, objOld) => {
 //else keep looping
 //after loop is done, return the new object
 
-const updatedScore = {};
+  const updatedScore = {};
 
-for(const key1 in objNew) {
-  for(const key2 in objOld) {
-    if(key1 === key2) {
+  for (const key1 in objNew) {
+    for (const key2 in objOld) {
+      if (key1 === key2) {
 
-      updatedScore[key1] = parseInt(objNew[key1]) + parseInt(objOld[key2]);
+        updatedScore[key1] = parseInt(objNew[key1]) + parseInt(objOld[key2]);
+      }
     }
   }
-}
 
-return updatedScore;
-
+  return updatedScore;
 
 
-}
 
-
+};
 
 module.exports = {
-  finalScores
-}
+  finalScore
+};

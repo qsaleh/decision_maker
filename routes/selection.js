@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const {scoringOptions}  = require('../public/scripts/scoringOptions.js');
 const sendEmailToUser = require('./sendgrid');
 
-
 module.exports = (db) => {
 
 app.set("view engine", "ejs");
@@ -19,7 +18,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
         //  console.log(key2);
          for(const key3 in req.body[key][key2]) {
             setData.push(req.body[key][key2]['option']);
-
          }
        }
 
@@ -50,7 +48,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
     });
 
     const scores = scoringOptions(objData);
+<<<<<<< HEAD
     sendEmailToUser('qmsaleh@gmail.com');
+=======
+    sendEmailToUser('ahyagoub40@gmail.com');
+>>>>>>> master
   });
 
   return router;

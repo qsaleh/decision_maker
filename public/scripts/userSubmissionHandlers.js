@@ -27,74 +27,55 @@
   //Here we are going to make the header disappear
 
   $('#title').click(function() {
-    $(this).css('width','500px');
+    $(this).css('width','300px');
 
       $('#cancelTitle').show();
   })
 
   $('#description').click(function() {
-    $(this).css('width','500px');
+    $(this).css('width','300px');
 
       $('#cancelDesc').show();
   })
 
   $('#newItem1').click(function() {
-    $(this).css('width','500px');
+    $(this).css('width','300px');
       $('#cancelItem1').show();
       $('#newItem2').show();
 
   })
 
   $('#newItem2').click(function() {
-    $(this).css('width','500px');
+    $(this).css('width','300px');
       $('#cancelItem2').show();
       $('#newItem3').show();
   })
 
   $('#newItem3').click(function() {
-    $(this).css('width','500px');
+    $(this).css('width','300px');
       $('#cancelItem3').show();
       $('#newItem4').show();
   })
 
   $('#newItem4').click(function() {
-    $(this).css('width','500px');
+    $(this).css('width','300px');
       $('#cancelItem4').show();
       $('#newItem5').show();
   })
 
   $('#newItem5').click(function() {
-    $(this).css('width','500px');
+    $(this).css('width','300px');
       $('#cancelItem5').show();
 
   })
-  //HOW CAN YOU SUBMIT DATA BY PRESSING ENTER?
-  // $('.submit').click(function() {
-  //     event.preventDefault();
-  //   //Send AJAX request to DB
-  // });
-
-  // $('.submit').click(function() {
-  //     event.preventDefault();
-  //   //Send AJAX request to DB
-  // });
-
-  //When submitting a new ITEM add an extra step where a new
-  //form box is inserted asking if they want to add another item
-  // $('.submit').click(function() {
-  //     event.preventDefault();
-  //   //Send AJAX request to DB
-  // });
 
   $('#cancelTitle').click(function() {
     $('#title').css('width','auto');
-    $('#submitTitle').hide();
     $('#cancelTitle').hide();
   });
 
   $('#cancelDesc').click(function() {
     $('#description').css('width','auto');
-    $('#submitDesc').hide();
     $('#cancelDesc').hide();
   });
 
@@ -132,16 +113,12 @@
     $('#cancelItem5').hide();
   });
 
-  // $('#submitAll').click(function() {
-  //   event.preventDefault();
-  //   $('.userSubmissionForm').hide();
-  //   $('header').slideDown().animate({height: "400px"}, 500);
-  //   $('.afterSubmission').show();
-  //   $('.allPrevCharts').show();
+  $('#submitAll').click(function() {
+    $('.userSubmissionForm').hide();
+    $('header').slideDown().animate({height: "400px"}, 500);
+    $('.afterSubmission').show();
+    $('.allPrevCharts').show();
 
-  // })
+  })
 
-  });
-
-  // })
-
+});

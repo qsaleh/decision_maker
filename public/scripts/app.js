@@ -5,6 +5,7 @@ $(() => {
     url: "/api/fake-data",
     success: function(results) {
       $('.poll').empty();
+      console.log('here');
       $('.poll').prepend(`<div id='pollTitle'><b>${results[0]["question"]}</b></div>
       <ul id='allOptions'>`);
       resultsArray = results;
