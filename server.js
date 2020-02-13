@@ -67,7 +67,9 @@ app.get("/", (req, res) => {
   console.log("templateVars", templateVars);
   res.render("index", templateVars);
 });
-app.get("/selection", (req, res) => {
+app.get("/selection/:id", (req, res) => {
+  exports.pollId = req.params.id;
+  // module.exports = poolId;
   res.render("selection");
 });
 app.get("/results", (req, res) => {
@@ -77,3 +79,4 @@ app.get("/results", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+

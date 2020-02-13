@@ -9,6 +9,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
 const router  = express.Router();
+const sendEmailToUser = require('./sendgrid');
 // const randomID = require('../public/scripts/randomID');
 
 module.exports = (db) => {
@@ -17,6 +18,7 @@ module.exports = (db) => {
   app.use(bodyParser.urlencoded({ extended: true }));
 
   router.post("/submit", (req, res) => {
+    sendEmailToUser('qmsaleh@gmail.com');
     console.log("req.body", req.body);
 
     const valuesPolls = [req.body.text, req.body.description];
@@ -59,6 +61,7 @@ module.exports = (db) => {
             .then(res2 => {
               const poll = res2.rows[0];
               console.log('poll', poll);
+
               return poll;
             })
             .then(response => {  // response i am getting is poll table or object

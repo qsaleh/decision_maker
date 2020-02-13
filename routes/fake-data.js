@@ -7,14 +7,17 @@
 
 const express = require('express');
 const router  = express.Router();
+const poolId = require('../server');
+
 
 module.exports = (db) => {
   router.get("/", (req, res) => { // use cookies to specify the user
+    console.log("poolId", poolId.pollId);
     db.query(`SELECT user_id, poll_id, question, date_created, options.id AS option_id, option, rank
     FROM polls
     JOIN options
     ON options.poll_id = polls.id
-    WHERE options.poll_id = 4
+    WHERE options.poll_id = ${poolId.pollId}
     ORDER BY option_id
     ;`)
       .then(data => {

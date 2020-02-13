@@ -10,7 +10,9 @@ module.exports = (db) => {
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
-    router.post("/selection", (req, res) => {
+
+    router.post("/selection/:id", (req, res) => {
+      console.log("This is req in selection.js",req);
       const setData = [];
 
       for(const key in req.body) {
@@ -49,11 +51,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
     });
 
     const scores = scoringOptions(objData);
-   // sendEmailToUser('qmsaleh@gmail.com');
+    sendEmailToUser('qmsaleh@gmail.com');
 
       db.query(`
       SELECT option, final_rank FROM final_ranks
-      WHERE poll_id = 4;`)
+      WHERE poll_id = ${req.params.id};`)
       .then (res => {
         const dbObject = {};
         for ( let i = 0 ; i < res.rows.length; i++){
