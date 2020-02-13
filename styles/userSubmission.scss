@@ -10,10 +10,15 @@
 .userSubmission{
   display: flex;
   justify-content: center;
+
   margin: 1em;
   padding-top: 2em;
+}
 
-
+.subForms {
+  display: flex;
+  justify-content: center;
+  margin: 1.5em;
 }
 
 .submit {
@@ -26,7 +31,7 @@
 
 #submitAll {
   justify-content: space-evenly;
-  margin-top: 15em;
+  margin-top: 5em;
   padding: 0.7em;
 }
 
