@@ -61,7 +61,7 @@ module.exports = (db) => {
         db.query(`
         INSERT INTO options (poll_id, option)
         VALUES ${values}
-        RETURNING *
+        RETURNING *;
         `)
           .then(result => {
             const option = result.rows[0];

@@ -132,25 +132,13 @@
     $('#cancelItem5').hide();
   });
 
-<<<<<<< HEAD
-  // $('#submitAll').click(function() {
-  //   event.preventDefault();
-=======
   // $('#submitAll').click(function(e) {
   //   e.preventDefault();
   //   // sendEmailsToUserThroughMailgunAPI();
->>>>>>> 9829b204496967de29424bdd3169e1b8f71d9af3
   //   $('.userSubmissionForm').hide();
   //   $('header').slideDown().animate({height: "400px"}, 500);
   //   $('.afterSubmission').show();
   //   $('.allPrevCharts').show();
-<<<<<<< HEAD
-=======
-
-  // })
-
-  });
->>>>>>> 9829b204496967de29424bdd3169e1b8f71d9af3
 
   // })
 

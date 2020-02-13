@@ -47,7 +47,7 @@ module.exports = (db) => {
     });
 
     const scores = scoringOptions(objData);
-    sendEmailToUser('olivefan92@gmail.com');
+    sendEmailToUser('ahyagoub40@gmail.com');
   });
 
   return router;
