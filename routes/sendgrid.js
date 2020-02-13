@@ -8,9 +8,8 @@ const sendEmailToUser = function(email) {
     to: email,
     from: 'GetYoVerdict@verdict.com',
     subject: 'Check out Yo Verdict',
-    text: 'Hey friend! \n Thank you for using Verdict! \n Found below is the link for your results and to send your friends the poll!\n Cheers! \n Get Yo Verdict team ',
-    html: `<a href="https://fathomless-dusk-70706.herokuapp.com/results">www.getyoverdict.com/results</a>
-          <a href="https://fathomless-dusk-70706.herokuapp.com/selection">www.getyoverdict.com/select-your-choices</a>`,
+    html: `Hey friend! <br/>Thank you for using Verdict! <br/>Found below is the link for your results and to send your friends the poll!<br/> Cheers!<br/> Get Yo Verdict team<br/>   <a href="https://fathomless-dusk-70706.herokuapp.com/results">www.getyoverdict.com/results</a>
+          <br/><a href="https://fathomless-dusk-70706.herokuapp.com/selection">www.getyoverdict.com/select-your-choices</a>`,
   };
   sgMail
     .send(msg)
