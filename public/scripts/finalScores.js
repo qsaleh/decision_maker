@@ -14,19 +14,34 @@ const finalScore = (objNew, objOld) => {
 
   for (const key1 in objNew) {
     for (const key2 in objOld) {
+      if(!objOld[key2]){
+        objOld[key2] = 0;
+      }
       if (key1 === key2) {
 
         updatedScore[key1] = parseInt(objNew[key1]) + parseInt(objOld[key2]);
       }
-    }
+  }
   }
 
   return updatedScore;
 
-
-
 };
+
+// const obA = {
+//   a: 1,
+//   b: 2
+// }
+// const obB = {
+//   b: null,
+//   a: null
+// }
+
+// console.log(finalScore(obA,obB));
+
+
 
 module.exports = {
   finalScore
 };
+

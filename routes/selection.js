@@ -4,6 +4,7 @@ const router  = express.Router();
 const bodyParser = require("body-parser");
 const {scoringOptions}  = require('../public/scripts/scoringOptions.js');
 const sendEmailToUser = require('./sendgrid');
+const {finalScore} = require('../public/scripts/finalScores.js');
 
 module.exports = (db) => {
 
@@ -48,8 +49,41 @@ app.use(bodyParser.urlencoded({ extended: true }));
     });
 
     const scores = scoringOptions(objData);
-    sendEmailToUser('qmsaleh@gmail.com');
+   // sendEmailToUser('qmsaleh@gmail.com');
+
+      db.query(`
+      SELECT option, final_rank FROM final_ranks
+      WHERE poll_id = 4;`)
+      .then (res => {
+        const dbObject = {};
+        for ( let i = 0 ; i < res.rows.length; i++){
+        dbObject[res.rows[i].option] = res.rows[i].final_rank;
+        }
+        return finalScore(scores, dbObject);
+  })
+  .then(result => {
+    for(const option in result) {
+      db.query(`
+      UPDATE final_ranks
+      SET final_rank = ${result[option]}
+      WHERE option = '${option}';
+      `)
+      .then (res => {
+        console.log('success');
+
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+
+    }
+
+
+    });
   });
 
   return router;
-};
+
+
+    };
