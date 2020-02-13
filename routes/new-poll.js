@@ -18,7 +18,9 @@ module.exports = (db) => {
 
   router.post("/submit", (req, res) => {
     console.log("req.body", req.body);
+
     const valuesPolls = [req.body.text, req.body.description];
+
     const queryStringPolls = `
     INSERT INTO polls (user_id, question, description, date_created)
     VALUES (1, $1, $2, Now())
@@ -38,57 +40,57 @@ module.exports = (db) => {
         values += `)`;
       }
     }
-    console.log("values", values);
 
-    db.query(queryStringPolls, valuesPolls)
-      .then(res2 => {
-        const poll = res2.rows[0];
-        console.log("poll", poll);
-        return poll;
-      })
-      .then(response => {  // response i am getting is poll table or object
-        // get the id from polls
-        let values = ``;
-        for (let i = 0; i < valuesLength; i++) {
-          values += `(`;
-          values += `${response.id}, '${valuesOptions[i]}'`;
-          if (i < valuesLength - 1) {
-            values += `),\n`;
-          } else {
-            values += `)`;
-          }
-        }
-        console.log("values", values);
-        console.log("response.id", response.id);
-        db.query(`
-        INSERT INTO options (poll_id, option)
-        VALUES ${values};
-        INSERT INTO final_ranks (poll_id, option)
-        VALUES ${values};
-        `)
-          .then(result => {
-            const option = result.rows[0];
-            console.log("option", option);
-            res.send('submitted successfully');
-          });
-      });
+      db.query(`
+      SELECT id FROM users
+      WHERE email = '${req.session.email}'
+      `)
+        .then(res => {
+        const user = res.rows[0];
+        return user;
+        })
+        .then(response => {
 
+          db.query(`
+          INSERT INTO polls (user_id, question, description, date_created)
+          VALUES (${response.id}, $1, $2, Now())
+          RETURNING *
+          `, valuesPolls)
+            .then(res2 => {
+              const poll = res2.rows[0];
+              console.log('poll', poll);
+              return poll;
+            })
+            .then(response => {  // response i am getting is poll table or object
+              // get the id from polls
+              let values = ``;
+              for (let i = 0; i < valuesLength; i++) {
+                values += `(`;
+                values += `${response.id}, '${valuesOptions[i]}'`;
+                if (i < valuesLength - 1) {
+                  values += `),\n`;
+                } else {
+                  values += `)`;
+                }
+              }
+              console.log("values", values);
+              console.log("response.id", response.id);
+              db.query(`
+              INSERT INTO options (poll_id, option)
+              VALUES ${values};
+              INSERT INTO final_ranks (poll_id, option)
+              VALUES ${values};
+              `)
+                .then(result => {
+                  const option = result.rows[0];
+                  console.log("option", option);
+                  res.send('submitted successfully');
+                });
+            });
 
-  });
+        })
 
-  // // // .then(res => {
-  // return
-  //router.post("/", (req, res) => {
-    // // const queryStringUsers = `
-    // // SELECT id FROM users
-    // // WHERE email = $1
-    // // `;
+    });
 
-    // // db.query(queryStringUsers, valuesUsers)
-    // // //   .then(res => {
-    // // //   const user = res.rows[0];
-
-    // // // })
-  // });
   return router;
 };
