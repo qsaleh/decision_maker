@@ -14,6 +14,7 @@ module.exports = (db) => {
     FROM polls
     JOIN options
     ON options.poll_id = polls.id
+    WHERE options.poll_id = 2
     ORDER BY option_id
     ;`)
       .then(data => {

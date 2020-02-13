@@ -1,9 +1,9 @@
 // Create a function that will output a random alphanumeric string
 
-const randomUrl = () => {
+const randomID = () => {
   return Math.random().toString(36).substr(2);
 }
 
 module.exports = {
-  randomUrl
+  randomID
 };
