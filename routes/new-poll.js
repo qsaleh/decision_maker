@@ -18,7 +18,7 @@ module.exports = (db) => {
   app.use(bodyParser.urlencoded({ extended: true }));
 
   router.post("/submit", (req, res) => {
-    sendEmailToUser('qmsaleh@gmail.com');
+
     console.log("req.body", req.body);
 
     const valuesPolls = [req.body.text, req.body.description];
@@ -78,6 +78,7 @@ module.exports = (db) => {
               }
               console.log("values", values);
               console.log("response.id", response.id);
+              sendEmailToUser('qmsaleh@gmail.com', response.id);
               db.query(`
               INSERT INTO options (poll_id, option)
               VALUES ${values};
