@@ -113,13 +113,12 @@
     $('#cancelItem5').hide();
   });
 
-  // $('#submitAll').click(function() {
-  //   event.preventDefault();
-  //   $('.userSubmissionForm').hide();
-  //   $('header').slideDown().animate({height: "400px"}, 500);
-  //   $('.afterSubmission').show();
-  //   $('.allPrevCharts').show();
+  $('#submitAll').click(function() {
+    $('.userSubmissionForm').hide();
+    $('header').slideDown().animate({height: "400px"}, 500);
+    $('.afterSubmission').show();
+    $('.allPrevCharts').show();
 
-  // })
+  })
 
 });

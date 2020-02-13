@@ -18,7 +18,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
         //  console.log(key2);
          for(const key3 in req.body[key][key2]) {
             setData.push(req.body[key][key2]['option']);
-
          }
        }
 

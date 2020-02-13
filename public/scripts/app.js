@@ -6,6 +6,7 @@ $(() => {
     url: "/api/fake-data",
     success: function(results) {
       $('.poll').empty();
+      console.log('here');
       $('.poll').prepend(`<div id='pollTitle'><b>${results[0]["question"]}</b></div>
       <ul id='allOptions'>`);
       resultsArray = results;
@@ -50,15 +51,13 @@ $('.button').click(function() {
   $('header').slideDown();
   $('.pollContainer').hide();
   $('.afterSubmission').show();
-//POST REQUEST
+  //POST REQUEST
 
     $.post("/api/selection/selection",
     {
       data: resultsArray
     }
     );
-
-
 
     setTimeout(() => {
       window.location = 'http://localhost:8080/';
