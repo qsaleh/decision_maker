@@ -45,7 +45,7 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
-const fakeDataRoutes = require("./routes/fake-data");
+// const fakeDataRoutes = require("./routes/fake-data");
 const newPollRoutes = require("./routes/new-poll");
 const selectionRoutes = require("./routes/selection");
 const resultsRoutes = require("./routes/results");
@@ -53,7 +53,7 @@ const resultsRoutes = require("./routes/results");
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
-app.use("/api/fake-data", fakeDataRoutes(db));
+// app.use("/api/fake-data", fakeDataRoutes(db));
 app.use("/api/new-poll", newPollRoutes(db));
 app.use("/api/selection", selectionRoutes(db));
 app.use("/api/results", resultsRoutes(db));
@@ -81,7 +81,11 @@ app.get("/results", (req, res) => {
   const templateVars = {pollId: req.params.id};
   res.render("results", templateVars);
 });
+// app.get("/api/fake-data", (req, res) => {
+//   console.log('req.params.id', req.params.id);
+//   exports.pollId = req.params.id;
 
+// });
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

@@ -1,12 +1,11 @@
 let resultsArray = [];
 $(() => {
-  console.log(window.location.href, "href frm get fake-data")
-  const idSlices = window.location.href.split('/')
-  console.log(idSlices[idSlices.length-1], 'id')
+
   $.ajax({
     method: "GET",
-    url: `/api/fake-data/${idSlices[idSlices.length-1]}`,
+    url: `/api/selection/:id `,
     success: function(results) {
+      console.log('results');
       $('.poll').empty();
       console.log('here');
       $('.poll').prepend(`<div id='pollTitle'><b>${results[0]["question"]}</b></div>
