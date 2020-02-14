@@ -69,6 +69,7 @@ module.exports = (db) => {
             `)
               .then(result => {
                 const option = result.rows[0];
+                res.redirect('/');
                 return option;
               });
           });

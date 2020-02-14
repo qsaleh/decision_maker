@@ -11,7 +11,6 @@ $(() => {
     success: function(results) {
       console.log('results');
       $('.poll').empty();
-      console.log('here');
       $('.poll').prepend(`<div id='pollTitle'><b>${results[0]["question"]}</b></div>
       <ul id='allOptions'>`);
       resultsArray = results;
