@@ -1,12 +1,13 @@
 
 $(() => {
-  console.log('FROM results.js');
+  const idSlices = window.location.href.split('/')
+
+
   $.ajax({
     method: "GET",
-    url: "/results",
+    url: `/results/${idSlices[idSlices.length-1]}`,
     success: function(results) {
-      // $('.poll').empty();
-      // console.log('RESULTS', results);
+      console.log('RESULTS from results.js: ', results);
       $('.chart1').prepend(`
 
       <svg class="chart" id='chartResults' width="420" height="150" aria-labelledby="title desc" role="img">

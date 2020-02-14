@@ -11,7 +11,7 @@ module.exports = (db) => {
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
-    router.post("/:id", (req, res) => {
+    router.post("selection/:id", (req, res) => {
       console.log("This is req in selection.js",req);
       const setData = [];
 

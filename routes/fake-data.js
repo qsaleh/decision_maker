@@ -12,7 +12,6 @@ const poolId = require('../server');
 
 module.exports = (db) => {
   router.get("/:id", (req, res) => { // use cookies to specify the user
-    console.log("fakedataId", req.params.id);
     db.query(`SELECT user_id, poll_id, question, date_created, options.id AS option_id, option, rank
     FROM polls
     JOIN options
@@ -22,6 +21,7 @@ module.exports = (db) => {
     ;`)
       .then(data => {
         const polls = data.rows;
+        console.log('FROM fake-data.js',res.json(polls));
         res.json(polls);
       })
       .catch(err => {

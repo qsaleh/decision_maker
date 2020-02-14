@@ -17,17 +17,15 @@ module.exports = (db) => {
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
-    router.get("/results", (req, res) => {
-      db.query(`SELECT option, final_rank FROM final_ranks
+    router.get("/results/:id", (req, res) => {
+      console.log("HERE");
 
+      db.query(`SELECT option, final_rank FROM final_ranks
       ORDER BY final_rank
       ;`)
         .then(data => {
           const final_rank = data.rows;
-
           res.json(final_rank);
-          console.log('final_rank res.json', res.json(final_rank))
-          // res.json(final_rank);
         })
         .catch(err => {
           res
