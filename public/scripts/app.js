@@ -1,12 +1,15 @@
 let resultsArray = [];
 $(() => {
-  console.log(window.location.href, "href frm get fake-data")
-  const idSlices = window.location.href.split('/')
-  console.log(idSlices[idSlices.length-1], 'id')
+  const idSlices = window.location.href.split('/');
+  console.log('idSlices: ', idSlices);
+  console.log('value of idSlices: ', typeof(idSlices[idSlices.length - 1]));
+  const id = Number(idSlices[idSlices.length - 1]);
+  console.log(id);
   $.ajax({
     method: "GET",
-    url: `/api/fake-data/${idSlices[idSlices.length-1]}`,
+    url: `/api/selection/${id}`,
     success: function(results) {
+      console.log('results');
       $('.poll').empty();
       console.log('here');
       $('.poll').prepend(`<div id='pollTitle'><b>${results[0]["question"]}</b></div>
@@ -45,7 +48,7 @@ $(() => {
     $('.pollContainer').hide();
     $('.afterSubmission').show();
     //POST REQUEST
-    $.post("/api/selection/selection",
+    $.post(`/api/selection/${id}`,
       {
         data: resultsArray
       }
