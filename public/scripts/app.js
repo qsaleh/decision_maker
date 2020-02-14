@@ -11,7 +11,6 @@ $(() => {
     success: function(results) {
       console.log('results');
       $('.poll').empty();
-      console.log('here');
       $('.poll').prepend(`<div id='pollTitle'><b>${results[0]["question"]}</b></div>
       <ul id='allOptions'>`);
       resultsArray = results;
@@ -54,7 +53,7 @@ $(() => {
       }
     );
     setTimeout(() => {
-      window.location = 'http://localhost:8080/';
+      window.location = 'https://fathomless-dusk-70706.herokuapp.com/';
     }, 2000);
   });
 });

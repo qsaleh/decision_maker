@@ -13,12 +13,90 @@
 
 .results {
 
-  margin: 1.5em;
-  padding-top: 2em;
+ display: flex;
+ justify-content: center;
 }
+
+
 
 #chartResults {
 margin-left: 3.5em;
 margin-top: 8em;
-font-size: larger;
+display: flex;
+justify-content: center;
+font-size: 1.6em;
 }
+
+@keyframes slideIn-little {
+0% {
+  width: 0%;
+}
+
+100% {
+  width: 9%;
+  }
+}
+
+#littleBar {
+  animation: slideIn-little 2s;
+}
+
+@keyframes slideIn-SecondLittle {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 18%;
+    }
+  }
+
+  #secondLittleBar {
+    animation: slideIn-SecondLittle 2s;
+  }
+
+  @keyframes slideIn-ThirdLittle {
+    0% {
+      width: 0%;
+    }
+
+    100% {
+      width: 36%;
+      }
+    }
+
+    #thirdLittleBar {
+      animation: slideIn-ThirdLittle 2s;
+    }
+
+    @keyframes slideIn-FourthLittle {
+      0% {
+        width: 0%;
+      }
+
+      100% {
+        width: 38%;
+        }
+      }
+
+      #fourthLittleBar {
+        animation: slideIn-FourthLittle 2s;
+      }
+
+      @keyframes slideIn-FifthLittle {
+        0% {
+          width: 0%;
+        }
+
+        100% {
+          width: 55%;
+          }
+        }
+
+        #fifthLittleBar {
+          animation: slideIn-FifthLittle 2s;
+        }
+
+
+
+
