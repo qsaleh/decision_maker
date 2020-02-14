@@ -10,7 +10,6 @@ const app = express();
 const bodyParser = require("body-parser");
 const router  = express.Router();
 const sendEmailToUser = require('./sendgrid');
-// const randomID = require('../public/scripts/randomID');
 
 module.exports = (db) => {
 
@@ -19,20 +18,12 @@ module.exports = (db) => {
 
   router.post("/submit", (req, res) => {
 
-    console.log("req.body", req.body);
-
     const valuesPolls = [req.body.text, req.body.description];
 
-    // const queryStringPolls = `
-    // INSERT INTO polls (user_id, question, description, date_created)
-    // VALUES (1, $1, $2, Now())
-    // RETURNING *
-    // `;
     const valuesOptions =
     [req.body.AddItem[0], req.body.AddItem[1], req.body.AddItem[2], req.body.AddItem[3], req.body.AddItem[4]].filter(Boolean);
     const valuesLength = valuesOptions.length;
     let values = ``;
-    // const voterID = randomID();
     for (let i = 0; i < valuesLength; i++) {
       values += `(`;
       values += `'${valuesOptions[i]}'`;
@@ -60,7 +51,6 @@ module.exports = (db) => {
           `, valuesPolls)
             .then(res2 => {
               const poll = res2.rows[0];
-              console.log('poll', poll);
 
               return poll;
             })

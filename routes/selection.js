@@ -57,7 +57,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
     JOIN polls ON users.id = polls.user_id
     WHERE polls.id = ${req.params.id};`)
     .then (email => {
-      sendEmailToUser(email, req.params.id);
+      return sendEmailToUser(email, req.params.id);
     })
 
 
