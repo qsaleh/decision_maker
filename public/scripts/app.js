@@ -51,7 +51,7 @@ $(() => {
       }
     );
     setTimeout(() => {
-      window.location = 'http://localhost:8080/';
+      window.location = 'https://fathomless-dusk-70706.herokuapp.com/';
     }, 2000);
   });
 });
