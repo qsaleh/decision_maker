@@ -1,11 +1,15 @@
 let resultsArray = [];
 $(() => {
-  const idSlices = window.location.href.split('/')
-
+  const idSlices = window.location.href.split('/');
+  console.log('idSlices: ', idSlices);
+  console.log('value of idSlices: ', typeof(idSlices[idSlices.length - 1]));
+  const id = Number(idSlices[idSlices.length - 1]);
+  console.log(id);
   $.ajax({
     method: "GET",
-    url: `/api/fake-data/${idSlices[idSlices.length-1]}`,
+    url: `/api/selection/${id}`,
     success: function(results) {
+      console.log('results');
       $('.poll').empty();
       $('.poll').prepend(`<div id='pollTitle'><b>${results[0]["question"]}</b></div>
       <ul id='allOptions'>`);
@@ -43,13 +47,13 @@ $(() => {
     $('.pollContainer').hide();
     $('.afterSubmission').show();
     //POST REQUEST
-    $.post("/api/selection/selection",
+    $.post(`/api/selection/${id}`,
       {
         data: resultsArray
       }
     );
     setTimeout(() => {
-      window.location = 'http://localhost:8080/';
+      window.location = 'https://fathomless-dusk-70706.herokuapp.com/';
     }, 2000);
   });
 });

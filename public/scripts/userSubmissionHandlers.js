@@ -1,26 +1,27 @@
-  //This file refreshes the main page using AJAX
-  //and brings the user into the poll creation page
-  $(document).ready(function() {
-  //Hiding the submission fields until click
+//This file refreshes the main page using AJAX
+//and brings the user into the poll creation page
+/* eslint-disable no-undef */
+$(document).ready(function() {
+//Hiding the submission fields until click
   $('.userSubmissionForm').hide();
-    $('.textForm').hide();
-    $('.submit').hide();
-    $('.cancel').hide();
-    $('.afterSubmission').hide();
+  $('.textForm').hide();
+  $('.submit').hide();
+  $('.cancel').hide();
+  $('.afterSubmission').hide();
 
 
 
   $('.getYoVerdict').click(function() {
-      $('header').slideUp();
-      //Expanding input box on click
-      $('.userSubmissionForm').show();
-      $('.textForm').show();
-      $('#submitAll').show();
-      $('.allPrevCharts').hide();
-      $('#newItem2').hide();
-      $('#newItem3').hide();
-      $('#newItem4').hide();
-      $('#newItem5').hide();
+    $('header').slideUp();
+    //Expanding input box on click
+    $('.userSubmissionForm').show();
+    $('.textForm').show();
+    $('#submitAll').show();
+    $('.allPrevCharts').hide();
+    $('#newItem2').hide();
+    $('#newItem3').hide();
+    $('#newItem4').hide();
+    $('#newItem5').hide();
   });
 
 
@@ -29,45 +30,45 @@
   $('#title').click(function() {
     $(this).css('width','300px');
 
-      $('#cancelTitle').show();
-  })
+    $('#cancelTitle').show();
+  });
 
   $('#description').click(function() {
     $(this).css('width','300px');
 
-      $('#cancelDesc').show();
-  })
+    $('#cancelDesc').show();
+  });
 
   $('#newItem1').click(function() {
     $(this).css('width','300px');
-      $('#cancelItem1').show();
-      $('#newItem2').show();
+    $('#cancelItem1').show();
+    $('#newItem2').show();
 
-  })
+  });
 
   $('#newItem2').click(function() {
     $(this).css('width','300px');
-      $('#cancelItem2').show();
-      $('#newItem3').show();
-  })
+    $('#cancelItem2').show();
+    $('#newItem3').show();
+  });
 
   $('#newItem3').click(function() {
     $(this).css('width','300px');
-      $('#cancelItem3').show();
-      $('#newItem4').show();
-  })
+    $('#cancelItem3').show();
+    $('#newItem4').show();
+  });
 
   $('#newItem4').click(function() {
     $(this).css('width','300px');
-      $('#cancelItem4').show();
-      $('#newItem5').show();
-  })
+    $('#cancelItem4').show();
+    $('#newItem5').show();
+  });
 
   $('#newItem5').click(function() {
     $(this).css('width','300px');
-      $('#cancelItem5').show();
+    $('#cancelItem5').show();
 
-  })
+  });
 
   $('#cancelTitle').click(function() {
     $('#title').css('width','auto');
@@ -113,12 +114,12 @@
     $('#cancelItem5').hide();
   });
 
-  $('#submitAll').click(function() {
-    $('.userSubmissionForm').hide();
-    $('header').slideDown().animate({height: "400px"}, 500);
-    $('.afterSubmission').show();
-    $('.allPrevCharts').show();
+  // $('#submitAll').click(function() {
+  //   $('.userSubmissionForm').hide();
+  //   $('header').slideDown().animate({height: "400px"}, 500);
+  //   $('.afterSubmission').show();
+  //   $('.allPrevCharts').show();
 
-  })
+  // });
 
 });

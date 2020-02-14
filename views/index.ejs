@@ -96,11 +96,15 @@
     <div class="headerElementsRight">
       <h2 class='headerFont'>A <b>simple</b> & <b>powerful</b> online polling tool</h2>
       <h4 class='headerFont'>An elegant solution that brings people <u><i>together</i></u> </h4>
+      <% if(username){ %>
       <div class='getYoVerdict'>
 
         <span ><b>Get</b> your verdict</span>
         <i class="fa fa-gavel gavelIcon bounce getYoVerdict "></i>
       </div>
+      <% } else{ %>
+        <span >Sign up or log in to get your verdict</span>
+      <% } %>
 
     </div>
 
@@ -186,6 +190,7 @@
 <!-- USER SUBMISSION FORM ENDS -->
 
     <!-- USER MAIN PAGE STARTS -->
+    <% if(username){ %>
     <div class='previousPoll allPrevCharts'>
       <h2 >Previous Polls you've participated in</h2>
 
@@ -196,23 +201,23 @@
       <h3 class='previousPoll'>What are you craving?</h3>
       <div class='chart1'>
         <svg class="chart" width="420" height="150" aria-labelledby="title desc" role="img">
-          <g class="bar1">
+          <g class="bar1" onclick="window.open('http://www.google.com/search?q=mexican+near+me') ;" >
             <rect width="40" height="19"></rect>
             <text x="45" y="9.5" dy=".35em">Mexican</text>
           </g>
-          <g class="bar1">
+          <g class="bar1" onclick="window.open('http://www.google.com/search?q=thai+near+me') ;">
             <rect width="80" height="19" y="20"></rect>
             <text x="85" y="28" dy=".35em">Thai</text>
           </g>
-          <g class="bar1">
+          <g class="bar1" onclick="window.open('http://www.google.com/search?q=bar+food+near+me') ;">
             <rect width="150" height="19" y="40"></rect>
             <text x="150" y="48" dy=".35em">Bar food</text>
           </g>
-          <g class="bar1">
+          <g class="bar1" onclick="window.open('http://www.google.com/search?q=Chinese+near+me') ;">
             <rect width="160" height="19" y="60"></rect>
             <text x="161" y="68" dy=".35em">Chinese</text>
           </g>
-          <g class="bar1">
+          <g class="bar1" onclick="window.open('http://www.google.com/search?q=pasta+near+me') ;">
             <rect width="230" height="19" y="80"></rect>
             <text x="235" y="88" dy=".35em">Pasta</text>
           </g>
@@ -223,23 +228,23 @@
       <h3 class='previousPoll'>What should we do?</h3>
       <div class='chart2'>
         <svg class="chart" width="420" height="150" aria-labelledby="title desc" role="img">
-          <g class="bar2">
+          <g class="bar2" onclick="window.open('http://www.google.com/search?q=arcade+games+near+me') ;">
             <rect width="40" height="19"></rect>
             <text x="45" y="9.5" dy=".35em">Arcade Games</text>
           </g>
-          <g class="bar2">
+          <g class="bar2" onclick="window.open('http://www.google.com/search?q=movies+near+me') ;">
             <rect width="80" height="19" y="20"></rect>
             <text x="85" y="28" dy=".35em">Movies</text>
           </g>
-          <g class="bar2">
+          <g class="bar2" onclick="window.open('http://www.google.com/search?q=chill+at+home+near+me') ;">
             <rect width="150" height="19" y="40"></rect>
             <text x="150" y="48" dy=".35em">Chill at home</text>
           </g>
-          <g class="bar2">
+          <g class="bar2" onclick="window.open('http://www.google.com/search?q=get+food+near+me') ;">
             <rect width="160" height="19" y="60"></rect>
             <text x="161" y="68" dy=".35em">Get food</text>
           </g>
-          <g class="bar2">
+          <g class="bar2" onclick="window.open('http://www.google.com/search?q=bowling+near+me') ;">
             <rect width="230" height="19" y="80"></rect>
             <text x="235" y="88" dy=".35em">Bowling</text>
           </g>
@@ -247,6 +252,7 @@
       </div>
 
     </div>
+    <% } %>
 
 
   </body>
