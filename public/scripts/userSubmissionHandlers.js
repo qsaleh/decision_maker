@@ -114,12 +114,4 @@ $(document).ready(function() {
     $('#cancelItem5').hide();
   });
 
-  // $('#submitAll').click(function() {
-  //   $('.userSubmissionForm').hide();
-  //   $('header').slideDown().animate({height: "400px"}, 500);
-  //   $('.afterSubmission').show();
-  //   $('.allPrevCharts').show();
-
-  // });
-
 });
