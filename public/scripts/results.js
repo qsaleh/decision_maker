@@ -12,7 +12,7 @@ $(() => {
       // console.log('RESULTS', results);
       $('.chart1').prepend(`
 
-    
+      <svg class="chart" id='chartResults' width="420" height="150" aria-labelledby="title desc" role="img">
       <g class="bar1">
         <rect width="40" height="19"></rect>
         <text x="45" y="9.5" dy=".35em">${arg[0]}</text>
