@@ -4,6 +4,7 @@ $(() => {
   console.log('idSlices: ', idSlices);
   console.log('value of idSlices: ', typeof(idSlices[idSlices.length - 1]));
   const id = Number(idSlices[idSlices.length - 1]);
+  console.log(id);
   $.ajax({
     method: "GET",
     url: `/api/selection/${id}`,

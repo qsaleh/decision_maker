@@ -58,7 +58,7 @@ module.exports = (db) => {
     JOIN polls ON users.id = polls.user_id
     WHERE polls.id = ${poolId.pollId};`)
       .then(email => {
-        sendEmailToUser(email.rows[0].email, req.params.id);
+        // sendEmailToUser(email.rows[0].email, req.params.id);
       });
 
 
@@ -96,7 +96,7 @@ module.exports = (db) => {
   });
 
   router.get("/:id", (req, res) => { // use cookies to specify the user
-    console.log('id', req);
+    // console.log('id', req);
     // console.log("fakedataId", req.params.id);
     db.query(`SELECT user_id, poll_id, question, date_created, options.id AS option_id, option, rank
     FROM polls
@@ -107,7 +107,6 @@ module.exports = (db) => {
     ;`)
       .then(data => {
         const polls = data.rows;
-        console.log('polls');
         return res.json(polls);
       })
       .catch(err => {

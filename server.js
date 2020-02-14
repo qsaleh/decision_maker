@@ -77,7 +77,7 @@ app.get("/selection/:id", (req, res) => {
   res.render("selection", templateVars);
 });
 app.get("/results/:id", (req, res) => {
-  // exports.pollId = req.params.id;
+  exports.pollId = req.params.id;
   const templateVars = {pollId: req.params.id};
   res.render("results", templateVars);
 });

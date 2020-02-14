@@ -14,7 +14,7 @@ module.exports = (db) => {
   app.set("view engine", "ejs");
   app.use(bodyParser.urlencoded({ extended: true }));
   router.post("/submit", (req, res) => {
-    console.log("req.body", req.body);
+    // console.log("req.body", req.body);
     const valuesPolls = [req.body.text, req.body.description];
     // const queryStringPolls = `
     // INSERT INTO polls (user_id, question, description, date_created)
@@ -66,7 +66,7 @@ module.exports = (db) => {
                 values += `)`;
               }
             }
-            sendEmailToUser(req.session.email, response.id);
+            // sendEmailToUser(req.session.email, response.id);
             db.query(`
             INSERT INTO options (poll_id, option)
             VALUES ${values};
