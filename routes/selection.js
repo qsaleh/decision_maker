@@ -12,7 +12,7 @@ module.exports = (db) => {
   app.use(bodyParser.urlencoded({ extended: true }));
 
   router.post("/:id", (req, res) => {
-    console.log("This is req in selection.js",req);
+    // console.log("This is req in selection.js",req);
     const setData = [];
 
     for (const key in req.body) {
@@ -42,7 +42,7 @@ module.exports = (db) => {
       `)
 
         .then(res => {
-          console.log('success');
+          console.log('success ranking data');
 
         })
         .catch(err => {
@@ -51,20 +51,21 @@ module.exports = (db) => {
     });
 
     const scores = scoringOptions(objData);
+    console.log('scores');
 
     db.query(`
     SELECT email FROM users
     JOIN polls ON users.id = polls.user_id
-    WHERE polls.id = ${req.params.id};`)
+    WHERE polls.id = ${poolId.pollId};`)
       .then(email => {
-        sendEmailToUser(email, req.params.id);
+        sendEmailToUser(email.rows[0].email, req.params.id);
       });
 
 
 
     db.query(`
     SELECT option, final_rank FROM final_ranks
-    WHERE poll_id = ${req.params.id};`)
+    WHERE poll_id = ${poolId.pollId};`)
       .then(res => {
         const dbObject = {};
         for (let i = 0; i < res.rows.length; i++) {
@@ -95,7 +96,8 @@ module.exports = (db) => {
   });
 
   router.get("/:id", (req, res) => { // use cookies to specify the user
-    console.log("fakedataId", req.params.id);
+    console.log('id', req);
+    // console.log("fakedataId", req.params.id);
     db.query(`SELECT user_id, poll_id, question, date_created, options.id AS option_id, option, rank
     FROM polls
     JOIN options
@@ -105,6 +107,7 @@ module.exports = (db) => {
     ;`)
       .then(data => {
         const polls = data.rows;
+        console.log('polls');
         return res.json(polls);
       })
       .catch(err => {

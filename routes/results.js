@@ -7,7 +7,7 @@ const cookieSession = require("cookie-session");
 const poolId = require('../server');
 
 module.exports = (db) => {
-
+  console.log('resultsroute');
   app.use(
     cookieSession({
       name: "session",
@@ -15,25 +15,25 @@ module.exports = (db) => {
     })
   );
 
-app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: true }));
-    router.get("/results", (req, res) => {
-      db.query(`SELECT option, final_rank FROM final_ranks
+  app.set("view engine", "ejs");
+  app.use(bodyParser.urlencoded({ extended: true }));
+  router.get(`/${poolId.pollId}`, (req, res) => {
+    db.query(`SELECT option, final_rank FROM final_ranks
+    WHERE poll_id = ${poolId.pollId}
+    ORDER BY final_rank
+    ;`)
+      .then(data => {
+        const finalRank = data.rows;
 
-      ORDER BY final_rank
-      ;`)
-        .then(data => {
-          const final_rank = data.rows;
-
-          res.json(final_rank);
-          console.log('final_rank res.json', res.json(final_rank))
-          // res.json(final_rank);
-        })
-        .catch(err => {
-          res
-            .status(500)
-            .json({ error: err.message });
-        });
+        res.json(finalRank);
+        console.log('final_rank res.json', res.json(finalRank));
+        // res.json(final_rank);
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
 
   });
 

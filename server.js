@@ -76,7 +76,7 @@ app.get("/selection/:id", (req, res) => {
   // module.exports = poolId;
   res.render("selection", templateVars);
 });
-app.get("/results", (req, res) => {
+app.get("/results/:id", (req, res) => {
   // exports.pollId = req.params.id;
   const templateVars = {pollId: req.params.id};
   res.render("results", templateVars);

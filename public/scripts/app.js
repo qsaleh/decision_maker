@@ -1,9 +1,12 @@
 let resultsArray = [];
 $(() => {
-
+  const idSlices = window.location.href.split('/');
+  console.log('idSlices: ', idSlices);
+  console.log('value of idSlices: ', typeof(idSlices[idSlices.length - 1]));
+  const id = Number(idSlices[idSlices.length - 1]);
   $.ajax({
     method: "GET",
-    url: `/api/selection/:id `,
+    url: `/api/selection/${id}`,
     success: function(results) {
       console.log('results');
       $('.poll').empty();
@@ -44,7 +47,7 @@ $(() => {
     $('.pollContainer').hide();
     $('.afterSubmission').show();
     //POST REQUEST
-    $.post("/api/selection/selection",
+    $.post(`/api/selection/${id}`,
       {
         data: resultsArray
       }
