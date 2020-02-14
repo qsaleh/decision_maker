@@ -23,11 +23,11 @@ module.exports = (db) => {
 
     const valuesPolls = [req.body.text, req.body.description];
 
-    const queryStringPolls = `
-    INSERT INTO polls (user_id, question, description, date_created)
-    VALUES (1, $1, $2, Now())
-    RETURNING *
-    `;
+    // const queryStringPolls = `
+    // INSERT INTO polls (user_id, question, description, date_created)
+    // VALUES (1, $1, $2, Now())
+    // RETURNING *
+    // `;
     const valuesOptions =
     [req.body.AddItem[0], req.body.AddItem[1], req.body.AddItem[2], req.body.AddItem[3], req.body.AddItem[4]].filter(Boolean);
     const valuesLength = valuesOptions.length;
@@ -76,8 +76,6 @@ module.exports = (db) => {
                   values += `)`;
                 }
               }
-              console.log("values", values);
-              console.log("response.id", response.id);
               sendEmailToUser(req.session.email, response.id);
               db.query(`
               INSERT INTO options (poll_id, option)
@@ -87,8 +85,7 @@ module.exports = (db) => {
               `)
                 .then(result => {
                   const option = result.rows[0];
-                  console.log("option", option);
-                  res.send('submitted successfully');
+                  return option;
                 });
             });
 
