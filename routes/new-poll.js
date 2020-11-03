@@ -7,7 +7,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
-const router  = express.Router();
+const router = express.Router();
 const sendEmailToUser = require('./sendgrid');
 module.exports = (db) => {
   app.set("view engine", "ejs");
@@ -17,7 +17,7 @@ module.exports = (db) => {
     const valuesPolls = [req.body.text, req.body.description];
 
     const valuesOptions =
-    [req.body.AddItem[0], req.body.AddItem[1], req.body.AddItem[2], req.body.AddItem[3], req.body.AddItem[4]].filter(Boolean);
+      [req.body.AddItem[0], req.body.AddItem[1], req.body.AddItem[2], req.body.AddItem[3], req.body.AddItem[4]].filter(Boolean);
     const valuesLength = valuesOptions.length;
     let values = ``;
     for (let i = 0; i < valuesLength; i++) {
@@ -77,41 +77,3 @@ module.exports = (db) => {
   });
   return router;
 };
-
-          // db.query(`
-          // INSERT INTO polls (user_id, question, description, date_created)
-          // VALUES (${response.id}, $1, $2, Now())
-          // RETURNING *
-          // `, valuesPolls)
-          //   .then(res2 => {
-          //     const poll = res2.rows[0];
-
-          //     return poll;
-          //   })
-          //   .then(response => {  // response i am getting is poll table or object
-          //     // get the id from polls
-          //     let values = ``;
-          //     for (let i = 0; i < valuesLength; i++) {
-          //       values += `(`;
-          //       values += `${response.id}, '${valuesOptions[i]}'`;
-          //       if (i < valuesLength - 1) {
-          //         values += `),\n`;
-          //       } else {
-          //         values += `)`;
-          //       }
-          //     }
-          //     sendEmailToUser(req.session.email, response.id);
-          //     db.query(`
-          //     INSERT INTO options (poll_id, option)
-          //     VALUES ${values};
-          //     INSERT INTO final_ranks (poll_id, option)
-          //     VALUES ${values};
-          //     `)
-          //       .then(result => {
-          //         const option = result.rows[0];
-          //         return option;
-          //       });
-          //   });
-
-
-
